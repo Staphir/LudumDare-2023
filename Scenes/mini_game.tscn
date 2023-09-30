@@ -1,22 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2eowvqnr8mwi"]
+[gd_scene load_steps=9 format=3 uid="uid://c2eowvqnr8mwi"]
 
 [ext_resource type="Script" path="res://Scripts/mini_game.gd" id="1_h0jrf"]
 [ext_resource type="PackedScene" uid="uid://b0oq3uxgi72ws" path="res://Scenes/mob_book_grid.tscn" id="2_shrer"]
 [ext_resource type="PackedScene" uid="uid://cgemyrxiebyq5" path="res://Scenes/book.tscn" id="3_7eno2"]
 [ext_resource type="Texture2D" uid="uid://q21ppg1ql8iu" path="res://Objects/Textures/empty_bookcase_zoomed3.png" id="3_isjpe"]
+[ext_resource type="Texture2D" uid="uid://ba5ccqjo367sp" path="res://Objects/Textures/wood_background.jpg" id="3_xbyv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp1i7"]
-size = Vector2(183.25, 540)
+size = Vector2(180.25, 540)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oet11"]
-size = Vector2(20, 534.5)
+size = Vector2(18, 534.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c01oo"]
-size = Vector2(22, 539)
+size = Vector2(14, 539)
 
 [node name="MiniGame" type="Node2D"]
 script = ExtResource("1_h0jrf")
 mob_book_grid_scene = ExtResource("2_shrer")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -86.0
+offset_top = -133.0
+offset_right = 729.0
+offset_bottom = 673.0
+texture = ExtResource("3_xbyv0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 640.0
@@ -28,16 +36,15 @@ texture = ExtResource("3_isjpe")
 position = Vector2(0, 180)
 
 [node name="RightWall" type="Area2D" parent="."]
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(91.375, 270)
+position = Vector2(89.875, 270)
 shape = SubResource("RectangleShape2D_dp1i7")
 
 [node name="LeftWall" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(643, 269.75)
+position = Vector2(644, 269.75)
 shape = SubResource("RectangleShape2D_oet11")
 
 [node name="MiddleWall" type="Area2D" parent="."]
