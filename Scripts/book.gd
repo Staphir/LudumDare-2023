@@ -2,12 +2,13 @@ extends Area2D
 
 @export var speed = 200
 
-signal hit #to notice collicion
+signal book_placed_sig #to notice collicion
 
 var screensize
 var velocity
 var collision_counter = 0
 var init_position = Vector2(20.0,180.0)
+var book_is_placed = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position = init_position
@@ -18,8 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var book_is_placed = false
-
+	
+	
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screensize)
 	
@@ -30,16 +31,16 @@ func _process(delta):
 		
 	if not book_is_placed:
 		# user tries to put the book in
-		if Input.is_action_pressed("place_book"):
+		if Input.is_action_just_pressed("place_book"):
 			if is_colliding():
 				position = init_position
-				print("Collision!!")
 			else:
 				book_is_placed = true
 				velocity = Vector2(0,0)
-				$CollisionShape2D.set_deferred("disabled", true)
+				#$CollisionShape2D.set_deferred("disabled", true)
 				$ScoreIncrease.text = "+1!!!"
-				$ScoreIncrease.show()
+				#$ScoreIncrease.show()
+				$AnimationPlayer.play("anim_score_increase")
 				
 
 
@@ -59,3 +60,9 @@ func _on_area_entered(area):
 func _on_area_exited(area):
 	collision_counter -= 1
 	#print("collision ctr: ", collision_counter)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "anim_score_increase":
+		emit_signal("book_placed_sig")
+
