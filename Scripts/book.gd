@@ -6,6 +6,7 @@ signal hit #to notice collicion
 
 var screensize
 var velocity
+var collision_counter = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CollisionShape2D.disabled = false
@@ -26,6 +27,20 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	hit.emit()
 	print("Collision with other books")
 	pass # Replace with function body.
+
+func is_colliding():
+	if collision_counter > 0:
+		return true
+
+
+
+func _on_area_entered(area):
+	collision_counter += 1
+	print("collision ctr: ", collision_counter)
+
+
+func _on_area_exited(area):
+	collision_counter -= 1
+	print("collision ctr: ", collision_counter)

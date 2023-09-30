@@ -6,9 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg7lj"]
 size = Vector2(41, 188)
 
-[node name="MobBook" type="RigidBody2D"]
+[node name="MobBook" type="Area2D"]
 collision_mask = 0
-gravity_scale = 0.0
 script = ExtResource("1_u2fvd")
 metadata/_edit_group_ = true
 
