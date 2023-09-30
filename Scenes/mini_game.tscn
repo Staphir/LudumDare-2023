@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://buw35s33w5qyk"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_k7lry"]
+
+[node name="MiniGame" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ImageTexture_k7lry")
