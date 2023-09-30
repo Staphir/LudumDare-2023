@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://tm78qm5numdu"]
+[gd_scene load_steps=6 format=3 uid="uid://tm78qm5numdu"]
 
+[ext_resource type="Script" path="res://Scripts/instantiate_map.gd" id="1_0376a"]
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_b8eqg"]
+[ext_resource type="MeshLibrary" uid="uid://buv3mlhhsdgv3" path="res://MeshLibrairies/tiles_library.tres" id="3_qcoy0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hme5v"]
-size = Vector3(70, 2, 40)
+size = Vector3(200, 2, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4un2i"]
-size = Vector3(70, 2, 40)
+size = Vector3(300, 2, 200)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_0376a")
 
 [node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42397, 0, -25.5107)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_hme5v")
@@ -20,12 +24,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_4un2i")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.103281, -0.588759, 0.801683, -0.0752283, 0.808309, 0.583933, -0.991803, -3.69476e-09, -0.127774, 29.673, 25.1222, 0)
+transform = Transform3D(0.222821, 0.600553, 0.767911, -0.75156, -0.395875, 0.527675, 0.620893, -0.694708, 0.363142, 29.673, 24.4539, -40.3758)
 shadow_enabled = true
 
 [node name="MainCameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.645684, 0.763605, 0, -0.763605, 0.645684, 1.37399, 29.0362, 23.2997)
 
 [node name="MainCamera" type="Camera3D" parent="MainCameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.427879, 0.903836, 0, -0.903836, 0.427879, 0, 14.6577, 10.1178)
+fov = 62.2
 
 [node name="Player" parent="." instance=ExtResource("1_b8eqg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.9962, 0, -6.21747)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_qcoy0")
+data = {
+"cells": PackedInt32Array(-6, 65529, 0, -3, 65529, 0, -65536, 65529, 0, -65533, 65529, 0, -65530, 65529, 1, -65527, 65529, 1, -65528, 65534, 3, -65531, 65534, 3, -65534, 65534, 2, -1, 65534, 2, -4, 65534, 2, -65521, 65530, 1441796, -65521, 65533, 1441796, -65521, 0, 1441797, -65521, 3, 1441797, -65527, 5, 655360, -65530, 5, 655361, -65523, 5, 655364, -65533, 5, 655363, -65535, 3, 1441795, -1, 2, 3, -1, 5, 655364, -4, 5, 655364, -7, 5, 655361, -10, 5, 655361, -65531, 2, 3, -65528, 2, 3, -4, 2, 0, -65524, 65529, 1, -14, 0, 1441796, -14, 65533, 1441797, -14, 3, 1048579, -13, 5, 655361, -65525, 65534, 3, -9, 65529, 0, -11, 65531, 1048578, -7, 65534, 5, -8, 65534, 5)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)

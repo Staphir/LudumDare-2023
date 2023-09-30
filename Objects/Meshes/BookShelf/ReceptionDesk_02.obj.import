@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bccbrni61twj3"
+path="res://.godot/imported/ReceptionDesk_02.obj-635ca78f97fa35e98c612904ee62f634.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ReceptionDesk_02.obj-635ca78f97fa35e98c612904ee62f634.mesh"]
+
+source_file="res://Objects/Meshes/BookShelf/ReceptionDesk_02.obj"
+dest_files=["res://.godot/imported/ReceptionDesk_02.obj-635ca78f97fa35e98c612904ee62f634.mesh", "res://.godot/imported/ReceptionDesk_02.obj-635ca78f97fa35e98c612904ee62f634.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

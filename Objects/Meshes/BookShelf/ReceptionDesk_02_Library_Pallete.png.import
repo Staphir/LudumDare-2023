@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dygnbfaj64p53"
-path.s3tc="res://.godot/imported/Library_Pallete.png-730282932d8debb2af66d363196e147b.s3tc.ctex"
+uid="uid://daehvpj62kf1i"
+path.s3tc="res://.godot/imported/ReceptionDesk_02_Library_Pallete.png-3efa74b4d58202efcb4a264fd6a1fcf0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Objects/Textures/Library_Pallete.png"
-dest_files=["res://.godot/imported/Library_Pallete.png-730282932d8debb2af66d363196e147b.s3tc.ctex"]
+source_file="res://Objects/Meshes/BookShelf/ReceptionDesk_02_Library_Pallete.png"
+dest_files=["res://.godot/imported/ReceptionDesk_02_Library_Pallete.png-3efa74b4d58202efcb4a264fd6a1fcf0.s3tc.ctex"]
 
 [params]
 

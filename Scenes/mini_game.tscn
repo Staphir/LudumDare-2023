@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2eowvqnr8mwi"]
+[gd_scene load_steps=5 format=3 uid="uid://njveiykqkdom"]
 
 [ext_resource type="Script" path="res://Scripts/mini_game.gd" id="1_h0jrf"]
-[ext_resource type="PackedScene" uid="uid://qtre4usn1nnf" path="res://Scenes/mob_book.tscn" id="2_0yw3y"]
-[ext_resource type="PackedScene" uid="uid://cgemyrxiebyq5" path="res://Scenes/book.tscn" id="3_7eno2"]
+[ext_resource type="PackedScene" path="res://Scenes/mob_book.tscn" id="2_0yw3y"]
+[ext_resource type="PackedScene" path="res://Scenes/book.tscn" id="3_7eno2"]
 [ext_resource type="Texture2D" uid="uid://q21ppg1ql8iu" path="res://Objects/Textures/empty_bookcase_zoomed3.png" id="3_isjpe"]
 
 [node name="MiniGame" type="Node2D"]

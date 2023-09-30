@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpcltxcobv80k"]
+
+[ext_resource type="PackedScene" uid="uid://cvvvp0h0dr1mp" path="res://Objects/Meshes/BookShelf/BookShelf_01.glb" id="1_8urkt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_egsae"]
+size = Vector3(5.05972, 9.9776, 2.16548)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.92684, 0)
+shape = SubResource("BoxShape3D_egsae")
+
+[node name="BookShelf_01" parent="." instance=ExtResource("1_8urkt")]
