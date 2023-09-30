@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://qtre4usn1nnf"]
+
+[ext_resource type="Texture2D" uid="uid://b0v7oorj2x0kh" path="res://Objects/Textures/book1.png" id="1_iawpa"]
+[ext_resource type="Script" path="res://Scripts/mob_book.gd" id="1_u2fvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg7lj"]
+size = Vector2(41, 188)
+
+[node name="MobBook" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_u2fvd")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iawpa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pg7lj")
