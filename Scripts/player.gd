@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
+const book = preload("res://Scenes/book3D.tscn")
 
+#movement vars
 @export var MAX_SPEED = 15
 @export var ACCELERATION = 110
 @export var FRICTION = 100
@@ -9,15 +11,15 @@ extends CharacterBody3D
 @onready var axis = Vector3.ZERO
 
 
+#----------------------- BEGIN movement functions ------------------
+
 func _physics_process(delta):
 	move(delta)
-
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	axis.z = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	return axis.normalized()
-
 
 func move(delta):
 	axis = get_input_axis()
@@ -29,15 +31,15 @@ func move(delta):
 		
 	move_and_slide()
 
-
 func apply_friction(amount):
 	if velocity.length() > amount:
 		velocity -= velocity.normalized() * amount
 	else:
 		velocity = Vector3.ZERO
 
-
 func apply_movement(acceleration):
 	velocity += acceleration
 	velocity = velocity.limit_length(MAX_SPEED)
-	
+
+#----------------------- END movement functions ------------------
+
