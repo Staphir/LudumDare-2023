@@ -2,7 +2,7 @@ extends Node2D
 
 @export var mob_book_scene: PackedScene
 @export var shelf_y_pos = 180
-@export var nb_mob_books = 5 #Max is 8
+@export var nb_mob_books = 6 #Max is 8
 var nb_slots = 8
 var init_pos_x = 205
 var book_size = 52
