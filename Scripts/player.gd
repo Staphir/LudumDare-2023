@@ -1,31 +1,43 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@export var MAX_SPEED = 15
+@export var ACCELERATION = 110
+@export var FRICTION = 100
+@export var ANGULAR_ACCELERATION = 7
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@onready var axis = Vector3.ZERO
 
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	move(delta)
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+func get_input_axis():
+	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	axis.z = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	return axis.normalized()
+
+
+func move(delta):
+	axis = get_input_axis()
+	if axis == Vector3.ZERO:
+		apply_friction(FRICTION * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+		apply_movement(axis * ACCELERATION * delta)
+		rotation.y = lerp_angle(rotation.y, atan2(axis.x, axis.z), delta * ANGULAR_ACCELERATION)
+		
 	move_and_slide()
+
+
+func apply_friction(amount):
+	if velocity.length() > amount:
+		velocity -= velocity.normalized() * amount
+	else:
+		velocity = Vector3.ZERO
+
+
+func apply_movement(acceleration):
+	velocity += acceleration
+	velocity = velocity.limit_length(MAX_SPEED)
+	

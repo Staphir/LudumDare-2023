@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bebdagoj6g72b" path="res://Objects/Meshes/Players/Player.glb" id="1_33cip"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qiaxq"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2g1jv"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bdatg"]
+radius = 1.26
+height = 4.435
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_qiaxq")
@@ -11,7 +13,8 @@ script = ExtResource("1_qiaxq")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="Player" parent="Pivot" instance=ExtResource("1_33cip")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.41502, 0, 0, 0, 2.18317, 0, 0, 0, 2.43792, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_2g1jv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05383, 0)
+shape = SubResource("CapsuleShape3D_bdatg")
