@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/mob_book.gd" id="1_u2fvd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg7lj"]
-size = Vector2(41, 188)
+size = Vector2(49, 192)
 
 [node name="MobBook" type="Area2D"]
 collision_mask = 0
