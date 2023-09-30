@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0oq3uxgi72ws"]
+
+[ext_resource type="Script" path="res://Scripts/mob_book_grid.gd" id="1_dvrlm"]
+[ext_resource type="PackedScene" uid="uid://qtre4usn1nnf" path="res://Scenes/mob_book.tscn" id="2_7dupp"]
+
+[node name="MobBookGrid" type="Node2D"]
+script = ExtResource("1_dvrlm")
+mob_book_scene = ExtResource("2_7dupp")
