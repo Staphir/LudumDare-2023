@@ -2,7 +2,7 @@ extends Area2D
 
 @export var speed = 200
 
-signal hit #to notice collicion
+signal book_placed_sig #to notice collicion
 
 var screensize
 var velocity
@@ -60,3 +60,9 @@ func _on_area_entered(area):
 func _on_area_exited(area):
 	collision_counter -= 1
 	#print("collision ctr: ", collision_counter)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "anim_score_increase":
+		emit_signal("book_placed_sig")
+

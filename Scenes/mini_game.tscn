@@ -54,3 +54,4 @@ position = Vector2(418, 269.5)
 shape = SubResource("RectangleShape2D_c01oo")
 
 [connection signal="body_exited" from="Book" to="Book" method="_on_body_exited"]
+[connection signal="book_placed_sig" from="Book" to="." method="_on_book_book_placed_sig"]

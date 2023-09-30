@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://7q1hmhcqdfcb"]
+[gd_scene load_steps=6 format=3 uid="uid://7q1hmhcqdfcb"]
 
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_ixdnv"]
+[ext_resource type="Script" path="res://Scripts/window.gd" id="2_4earr"]
 [ext_resource type="PackedScene" uid="uid://c2eowvqnr8mwi" path="res://Scenes/mini_game.tscn" id="2_sbego"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hme5v"]
@@ -32,8 +33,15 @@ transform = Transform3D(1, 0, 0, 0, 0.427879, 0.903836, 0, -0.903836, 0.427879, 
 [node name="Player" parent="." instance=ExtResource("1_ixdnv")]
 
 [node name="Window" type="Window" parent="."]
-position = Vector2i(1188, 36)
-size = Vector2i(640, 540)
+position = Vector2i(1280, 10)
+size = Vector2i(640, 457)
 borderless = true
+script = ExtResource("2_4earr")
+mini_game_scene = ExtResource("2_sbego")
 
-[node name="MiniGame" parent="Window" instance=ExtResource("2_sbego")]
+[node name="Window2" type="Window" parent="."]
+position = Vector2i(1280, 500)
+size = Vector2i(640, 457)
+borderless = true
+script = ExtResource("2_4earr")
+mini_game_scene = ExtResource("2_sbego")
