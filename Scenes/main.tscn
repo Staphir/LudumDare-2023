@@ -90,5 +90,5 @@ shape = SubResource("BoxShape3D_v8cld")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13737, 11.077)
 shape = SubResource("BoxShape3D_ooq0l")
 
-[node name="ReceptionDeskMesh" parent="." instance=ExtResource("5_xbi3l")]
-transform = Transform3D(0.437116, 0, 0.899405, 0, 1, 0, -0.899405, 0, 0.437116, -28.6114, 0, -4.61613)
+[node name="ReceptionDesk" parent="." instance=ExtResource("5_xbi3l")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -28.611, 0, -4.616)

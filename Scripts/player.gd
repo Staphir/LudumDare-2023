@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-const book = preload("res://Scenes/book3D.tscn")
-
 #movement vars
 @export var MAX_SPEED = 15
 @export var ACCELERATION = 110
@@ -9,12 +7,21 @@ const book = preload("res://Scenes/book3D.tscn")
 @export var ANGULAR_ACCELERATION = 7
 
 @onready var axis = Vector3.ZERO
+@onready var have_book = false
 
 
-#----------------------- BEGIN movement functions ------------------
+func _ready():
+	$Book.set_visible(false)
 
 func _physics_process(delta):
 	move(delta)
+	
+	if Input.is_action_pressed("select_desk") and get_node("../ReceptionDesk").near and !have_book:
+		$Book.set_visible(true)
+		have_book = true
+
+
+#----------------------- BEGIN movement functions ------------------
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))

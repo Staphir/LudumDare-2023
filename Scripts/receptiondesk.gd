@@ -1,6 +1,8 @@
-extends MeshInstance3D
+extends Node3D
 
 const glow_material = preload("res://Objects/Materials/glowmaterial.tres")
+
+@onready var near = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,10 +15,10 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	material_overlay = glow_material
-	print("enter")
+	$ReceptionDeskMesh.material_overlay = glow_material
+	near = true
 
 
 func _on_area_3d_body_exited(body):
-	material_overlay = null
-	print("exit")
+	$ReceptionDeskMesh.material_overlay = null
+	near = false
