@@ -16,10 +16,10 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	$BookShelf01.material_overlay = glow_material
+	get_child(1).material_overlay = glow_material # child(1) is the MeshInstance3D
 	near = true
 
 
 func _on_area_3d_body_exited(body):
-	$BookShelf01.material_overlay = null
+	get_child(1).material_overlay = null
 	near = false

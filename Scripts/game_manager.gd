@@ -1,7 +1,7 @@
 extends Node
 
-@export var nb_free_slots = 2
-var current_nb_free_slots = 5
+@export var nb_free_slots = 16
+var current_nb_free_slots = 0
 @export var gamemode = 0 #1 is multiplayer, 0 is solo
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,9 +36,10 @@ func init_bookshelves():
 	while(free_slot_to_assign > 0):
 		var assign_free_slots = randi_range(0,1)
 		free_slot_to_assign -= assign_free_slots
-		randi_range(0,bookshelves.size()-1)
-		print(bookshelves[0].free_slots)
-		bookshelves[0].free_slots = bookshelves[0].free_slots + assign_free_slots
+		var bookshelf_index = randi_range(0,bookshelves.size()-1)
+		print(bookshelves[bookshelf_index].free_slots)
+		if bookshelves[bookshelf_index].free_slots < 8:
+			bookshelves[bookshelf_index].free_slots += assign_free_slots
 		
 func update_HUD():
 	get_node("../HUD").update_free_book_slots_nb(current_nb_free_slots)
