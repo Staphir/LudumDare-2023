@@ -1,9 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://0nggypwo7off"]
+[gd_scene load_steps=15 format=3 uid="uid://0nggypwo7off"]
 
 [ext_resource type="FontFile" uid="uid://qh2srf4234rf" path="res://Fonts/Xolonium-Regular.ttf" id="1_dkhc6"]
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_se2mj"]
+[ext_resource type="Texture2D" uid="uid://byi58yrfh3gka" path="res://Objects/Textures/menu_background.PNG" id="2_0qr27"]
 [ext_resource type="Texture2D" uid="uid://b0v7oorj2x0kh" path="res://Objects/Textures/book1.png" id="2_3hbqj"]
 [ext_resource type="Texture2D" uid="uid://ehvsksif3v44" path="res://Objects/Textures/book2.png" id="2_hs1yr"]
+[ext_resource type="Texture2D" uid="uid://k0srhc0a7i4d" path="res://Objects/Textures/empty_bookcase_menu.png" id="3_xgb3s"]
+[ext_resource type="Texture2D" uid="uid://dq27lj2kmpfl2" path="res://Objects/Textures/book2_pressed.png" id="5_7hwkh"]
+[ext_resource type="Texture2D" uid="uid://dx377dbo8dvog" path="res://Objects/Textures/book2_hover.png" id="6_811sf"]
+[ext_resource type="AudioStream" uid="uid://c8u6mv60lueos" path="res://Sounds/music/menu_music.mp3" id="6_avse2"]
+[ext_resource type="Texture2D" uid="uid://bhc68g6k1uol4" path="res://Objects/Textures/book1_pressed.png" id="7_flutg"]
+[ext_resource type="Texture2D" uid="uid://0m56csti5654" path="res://Objects/Textures/book1_hover.png" id="8_h8yrc"]
+[ext_resource type="Texture2D" uid="uid://tkc2f0sbeky0" path="res://Objects/Textures/book3.png" id="8_tr5ge"]
+
+[sub_resource type="Animation" id="Animation_vwomq"]
+resource_name = "title_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 50), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlr86"]
+_data = {
+"title_animation": SubResource("Animation_vwomq")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,21 +44,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_se2mj")
 
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -424.0
+offset_right = 1916.0
+offset_bottom = 1080.0
+texture = ExtResource("2_0qr27")
+
+[node name="MenuBookshelf" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 336.0
+offset_right = 1907.0
+offset_bottom = 1076.0
+texture = ExtResource("3_xgb3s")
+
 [node name="QuitButton" type="TextureButton" parent="."]
-offset_left = 412.0
-offset_top = 401.0
-offset_right = 530.0
-offset_bottom = 847.0
+layout_mode = 0
+offset_left = 1472.0
+offset_top = 384.0
+offset_right = 1572.0
+offset_bottom = 701.0
 texture_normal = ExtResource("2_hs1yr")
+texture_pressed = ExtResource("5_7hwkh")
+texture_hover = ExtResource("6_811sf")
 stretch_mode = 0
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="QuitButton"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 117.0
-offset_bottom = 442.0
+offset_left = 2.0
+offset_right = 100.0
+offset_bottom = 315.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_dkhc6")
 theme_override_font_sizes/font_size = 48
@@ -41,20 +88,19 @@ vertical_alignment = 1
 
 [node name="StartButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 766.0
-offset_top = 330.0
-offset_right = 884.0
-offset_bottom = 776.0
+offset_left = 1360.0
+offset_top = 384.0
+offset_right = 1456.0
+offset_bottom = 702.0
 texture_normal = ExtResource("2_3hbqj")
+texture_pressed = ExtResource("7_flutg")
+texture_hover = ExtResource("8_h8yrc")
 stretch_mode = 0
-metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="StartButton"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 117.0
-offset_bottom = 442.0
+offset_right = 96.0
+offset_bottom = 315.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_dkhc6")
 theme_override_font_sizes/font_size = 48
@@ -66,14 +112,18 @@ T"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartButton"]
+root_node = NodePath("../../Title")
+autoplay = "title_animation"
+libraries = {
+"": SubResource("AnimationLibrary_rlr86")
+}
+
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -547.0
-offset_right = 548.0
-offset_bottom = 298.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 158.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
 theme_override_fonts/font = ExtResource("1_dkhc6")
@@ -81,6 +131,53 @@ theme_override_font_sizes/font_size = 128
 text = "LIBRARY FIGHT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_avse2")
+volume_db = -10.0
+autoplay = true
+
+[node name="Book" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 416.0
+offset_right = 1856.0
+offset_bottom = 702.0
+texture = ExtResource("8_tr5ge")
+
+[node name="Book5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1616.0
+offset_top = 408.0
+offset_right = 1696.0
+offset_bottom = 702.0
+texture = ExtResource("8_tr5ge")
+
+[node name="Book2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1736.0
+offset_top = 400.0
+offset_right = 1816.0
+offset_bottom = 710.0
+texture = ExtResource("2_3hbqj")
+
+[node name="Book4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1704.0
+offset_top = 424.0
+offset_right = 1760.0
+offset_bottom = 702.0
+texture = ExtResource("2_3hbqj")
+
+[node name="Book3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1824.0
+offset_top = 424.0
+offset_right = 1904.0
+offset_bottom = 710.0
+texture = ExtResource("2_hs1yr")
 
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
