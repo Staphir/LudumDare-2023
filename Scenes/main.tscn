@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://rbmi7wsmd5xs" path="res://Scenes/BookShelfs/book_shelf_04.tscn" id="11_8txq8"]
 [ext_resource type="PackedScene" uid="uid://b4fgmh6o1e2ri" path="res://Scenes/BookShelfs/book_shelf_05.tscn" id="12_lkbuj"]
 [ext_resource type="PackedScene" uid="uid://dgtr3bcmhulj5" path="res://Scenes/BookShelfs/book_shelf_06.tscn" id="13_joygf"]
+[ext_resource type="AudioStream" uid="uid://kty11touol7k" path="res://Sounds/music/in_game_music.mp3" id="16_oj1q3"]
+[ext_resource type="AudioStream" uid="uid://c04m1l1v0uc3i" path="res://Sounds/countdown-sound-effect-8-bit-151797.mp3" id="17_sl4ni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hme5v"]
 size = Vector3(200, 2, 100)
@@ -138,6 +140,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.018
 
 [node name="BookShelf_06" parent="." groups=["bookshelves"] instance=ExtResource("13_joygf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.025, 0, 0.894646)
+
+[node name="InGameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_oj1q3")
+volume_db = -20.0
+
+[node name="StartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_sl4ni")
+volume_db = -20.0
+autoplay = true
 
 [node name="BookShelf_07" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0271, 0, -13.1071)
