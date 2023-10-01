@@ -15,10 +15,10 @@ func _process(delta):
 
 
 func _on_area_3d_body_entered(body):
-	$ReceptionDeskMesh.material_overlay = glow_material
+	$WallBookshelf02.material_overlay = glow_material
 	near = true
 
 
 func _on_area_3d_body_exited(body):
-	$ReceptionDeskMesh.material_overlay = null
+	$WallBookshelf02.material_overlay = null
 	near = false
