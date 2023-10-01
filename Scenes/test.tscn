@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7q1hmhcqdfcb"]
+[gd_scene load_steps=7 format=3 uid="uid://7q1hmhcqdfcb"]
 
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_ixdnv"]
 [ext_resource type="Script" path="res://Scripts/window.gd" id="2_4earr"]
 [ext_resource type="PackedScene" uid="uid://c2eowvqnr8mwi" path="res://Scenes/mini_game.tscn" id="2_sbego"]
+[ext_resource type="PackedScene" uid="uid://cpcltxcobv80k" path="res://Scenes/bookshelf.tscn" id="4_wrxqr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hme5v"]
 size = Vector3(70, 2, 40)
@@ -28,7 +29,8 @@ shadow_enabled = true
 [node name="MainCameraPivot" type="Marker3D" parent="."]
 
 [node name="MainCamera" type="Camera3D" parent="MainCameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.427879, 0.903836, 0, -0.903836, 0.427879, 0, 14.6577, 10.1178)
+transform = Transform3D(1, 0, 0, 0, 0.706132, 0.708081, 0, -0.708081, 0.706132, 0, 24.2502, 20.8713)
+current = true
 
 [node name="Player" parent="." instance=ExtResource("1_ixdnv")]
 
@@ -45,3 +47,6 @@ size = Vector2i(640, 457)
 borderless = true
 script = ExtResource("2_4earr")
 mini_game_scene = ExtResource("2_sbego")
+
+[node name="StaticBody3D" parent="." instance=ExtResource("4_wrxqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52379, 0, -10.613)

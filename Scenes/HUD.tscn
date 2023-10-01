@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbpknw4va1l6r"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_gkwmn"]
+[ext_resource type="FontFile" uid="uid://qh2srf4234rf" path="res://Fonts/Xolonium-Regular.ttf" id="1_lqssw"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_gkwmn")
+
+[node name="SpaceRemainingLabel" type="Label" parent="."]
+offset_left = 304.0
+offset_top = 16.0
+offset_right = 992.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 48
+text = "FREE BOOK SLOTS"
+
+[node name="FreeBookSlotsNb" type="Label" parent="SpaceRemainingLabel"]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 8.0
+offset_right = 584.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 36
+text = "1"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 287.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 48
+text = "SCORE"
+
+[node name="ScoreP1Label" type="Label" parent="ScoreLabel"]
+layout_mode = 0
+offset_top = 81.0
+offset_right = 99.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 36
+text = "P1: "
+
+[node name="ScoreP1Val" type="Label" parent="ScoreLabel/ScoreP1Label"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 179.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 36
+text = "0"
+
+[node name="ScoreP2Label" type="Label" parent="ScoreLabel"]
+layout_mode = 0
+offset_top = 133.0
+offset_right = 84.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 36
+text = "P2:"
+
+[node name="ScoreP2Val" type="Label" parent="ScoreLabel/ScoreP2Label"]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 164.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 36
+text = "0"
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -50.0
+offset_right = 83.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 128
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageTimer1Sec" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="MessageTimer1Sec" to="." method="_on_message_timer_timeout"]

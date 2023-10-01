@@ -8,6 +8,7 @@ extends CharacterBody3D
 
 @onready var axis = Vector3.ZERO
 @onready var have_book = false
+@onready var score = 0
 
 func _ready():
 	$Book.set_visible(false)
