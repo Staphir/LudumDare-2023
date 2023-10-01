@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-
+var material_p2 = preload("res://Objects/Materials/player_2.tres")
 @export var player_id = 1
 #movement vars
 @export var MAX_SPEED = 15
@@ -14,6 +14,8 @@ extends CharacterBody3D
 
 func _ready():
 	$Book.set_visible(false)
+	if player_id == 2:
+		$Pivot/Character/Mball_001.set_material_override(material_p2)
 
 func _physics_process(delta):
 	move(delta)

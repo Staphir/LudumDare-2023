@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://xrlx06e4ifc0"]
 
-[ext_resource type="PackedScene" uid="uid://bebdagoj6g72b" path="res://Objects/Meshes/Players/Player.glb" id="1_33cip"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_qiaxq"]
+[ext_resource type="PackedScene" uid="uid://b3yg8qk0dt0oq" path="res://Scenes/player_object.tscn" id="2_2a31w"]
 [ext_resource type="PackedScene" uid="uid://cyva73watqe7h" path="res://Scenes/book3D.tscn" id="3_3imhg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bdatg"]
-radius = 1.26
-height = 4.435
+radius = 1.22296
+height = 4.39097
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 4
@@ -15,12 +15,12 @@ script = ExtResource("1_qiaxq")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="Player" parent="Pivot" instance=ExtResource("1_33cip")]
+[node name="Character" parent="Pivot" instance=ExtResource("2_2a31w")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05383, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.00791, 0)
 shape = SubResource("CapsuleShape3D_bdatg")
 
 [node name="Book" parent="." instance=ExtResource("3_3imhg")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4.63359, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4.5547, 0)
