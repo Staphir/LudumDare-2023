@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://tm78qm5numdu"]
+[gd_scene load_steps=22 format=3 uid="uid://tm78qm5numdu"]
 
 [ext_resource type="Script" path="res://Scripts/instantiate_map.gd" id="1_0376a"]
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_b8eqg"]
@@ -128,14 +128,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5762, 0, -8.64431)
 [node name="BookShelf_02" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4616, 0, 4.62109)
 
-[node name="BookShelf_03" parent="." instance=ExtResource("10_5w141")]
+[node name="BookShelf_03" parent="." groups=["bookshelves"] instance=ExtResource("10_5w141")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.20426, 0, 0.90419)
 
-[node name="BookShelf_04" parent="." instance=ExtResource("11_8txq8")]
+[node name="BookShelf_04" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
 transform = Transform3D(0.0417187, 0, 0.999129, 0, 1, 0, -0.999129, 0, 0.0417187, -26.2478, 0, 1.6529)
 
-[node name="BookShelf_05" parent="." instance=ExtResource("12_lkbuj")]
+[node name="BookShelf_05" parent="." groups=["bookshelves"] instance=ExtResource("12_lkbuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32826, 0, 7.85552)
 
-[node name="BookShelf_06" parent="." instance=ExtResource("13_joygf")]
+[node name="BookShelf_06" parent="." groups=["bookshelves"] instance=ExtResource("13_joygf")]
 transform = Transform3D(-0.0655773, 0, -0.997847, 0, 1, 0, 0.997847, 0, -0.0655773, 26.1158, 0, 1.93537)

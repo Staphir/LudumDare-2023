@@ -6,6 +6,7 @@ signal finished
 @export var nb_slots_available = 2
 var nb_slots_total = 5
 var mini_game_finished = false
+var bookshelf
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_mob_book_grid()
@@ -16,11 +17,13 @@ func _process(delta):
 
 func spawn_mob_book_grid():
 	var mob_book_grid = mob_book_grid_scene.instantiate()
+	mob_book_grid.nb_mob_books = 8 - bookshelf.free_slots
 	add_child(mob_book_grid)
-
+	
 
 
 
 func _on_book_book_placed_sig():
 	emit_signal("finished")
+	bookshelf.free_slots -= 1
 	mini_game_finished = true

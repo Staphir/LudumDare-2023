@@ -33,7 +33,7 @@ func spawn_mob_book():
 			book_x_pos += middle_spacing
 			
 		
-		print(mob_book.get_node("Sprite2D").texture.get_size().y)
+		#print(mob_book.get_node("Sprite2D").texture.get_size().y)
 		mob_book.position = Vector2(book_x_pos,shelf_y_pos)
 		add_child(mob_book)
 		mob_book.position.y = 280 - mob_book.get_node("Sprite2D").texture.get_size().y

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bl82wwwms1rkx"]
 
 [ext_resource type="PackedScene" uid="uid://b266c76w282gr" path="res://Objects/Meshes/BookShelf/BookShelf_02.gltf" id="1_nw66q"]
-[ext_resource type="Script" path="res://Scripts/book_shelf_02.gd" id="2_0de1o"]
+[ext_resource type="Script" path="res://Scripts/book_shelf_01.gd" id="2_3q2vg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_slnp7"]
 size = Vector3(5.3, 9, 2.5)
@@ -10,7 +10,7 @@ size = Vector3(5.3, 9, 2.5)
 size = Vector3(500, 220, 851)
 
 [node name="BookShelf02" instance=ExtResource("1_nw66q")]
-script = ExtResource("2_0de1o")
+script = ExtResource("2_3q2vg")
 
 [node name="Area3D" type="Area3D" parent="." index="0"]
 collision_layer = 2

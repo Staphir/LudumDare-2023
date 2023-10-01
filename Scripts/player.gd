@@ -20,10 +20,15 @@ func _physics_process(delta):
 		if get_node("../ReceptionDesk").near and !have_book:
 			$Book.set_visible(true)
 			have_book = true
-		if (get_node("../BookShelf_01").near or get_node("../BookShelf_02").near or get_node("../BookShelf_03").near or get_node("../BookShelf_04").near or get_node("../BookShelf_05").near or get_node("../BookShelf_06").near) and have_book:
-			get_node("../Window").init_mini_game()
-			$Book.set_visible(false)
-			have_book = false
+		var bookshelves = get_tree().get_nodes_in_group("bookshelves")
+		for bookshelf in bookshelves:
+			if bookshelf.near and have_book:
+				print("Bookshelf %s has %s slots" % [bookshelf.name, str(bookshelf.free_slots)])
+				get_node("../Window").init_mini_game(bookshelf)
+				$Book.set_visible(false)
+				have_book = false
+				break
+			
 
 
 #----------------------- BEGIN movement functions ------------------
