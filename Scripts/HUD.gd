@@ -48,7 +48,7 @@ func game_finished():
 	await get_tree().create_timer(0.5).timeout
 	$Message.show()
 	await get_tree().create_timer(1).timeout
-	$Message.text = ""
+	$Message.hide()
 
 func set_windows_position():
 		var screensize = get_viewport().size
