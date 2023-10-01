@@ -15,6 +15,9 @@ func _process(delta):
 		init_mini_game()
 	if mini_game:
 		if mini_game.mini_game_finished:
+			mini_game.mini_game_finished = false
+			get_node("../Player1").score += 1
+			get_node("../GameManager").current_nb_free_slots -= 1
 			hide()
 
 
