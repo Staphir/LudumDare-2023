@@ -28,8 +28,9 @@ func init_mini_game(bookshelf):
 	#remove anay eventual existing instance before creating new one
 	if mini_game:
 		mini_game.queue_free()
-	mini_game = mini_game_scene.instantiate()
-	mini_game.bookshelf = bookshelf
-	mini_game.player_id = player_id
-	add_child(mini_game)
-	show()
+	if bookshelf.free_slots > 0:
+		mini_game = mini_game_scene.instantiate()
+		mini_game.bookshelf = bookshelf
+		mini_game.player_id = player_id
+		add_child(mini_game)
+		show()
