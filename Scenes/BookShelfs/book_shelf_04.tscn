@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://rbmi7wsmd5xs"]
+
+[ext_resource type="PackedScene" uid="uid://cvjjbddqlcb8m" path="res://Objects/Meshes/BookShelf/BookShelf_04.gltf" id="1_ixclg"]
+[ext_resource type="Script" path="res://Scripts/book_shelf_04.gd" id="2_txth6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rkddp"]
+size = Vector3(5.52002, 8.54998, 2.85051)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ub74c"]
+size = Vector3(512.626, 230, 790.772)
+
+[node name="BookShelf_04" instance=ExtResource("1_ixclg")]
+script = ExtResource("2_txth6")
+
+[node name="Area3D" type="Area3D" parent="." index="0"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.143965, 3.80067, 0)
+shape = SubResource("BoxShape3D_rkddp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BookShelf04" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BookShelf04/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 8.63819, -4.5469e-05, -381.422)
+shape = SubResource("BoxShape3D_ub74c")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

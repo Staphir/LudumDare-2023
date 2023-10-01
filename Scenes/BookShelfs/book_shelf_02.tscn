@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/book_shelf_02.gd" id="2_0de1o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_slnp7"]
-size = Vector3(5.27927, 8.96958, 2.47321)
+size = Vector3(5.3, 9, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxd4w"]
 size = Vector3(500, 220, 851)
