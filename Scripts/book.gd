@@ -9,12 +9,27 @@ var velocity
 var collision_counter = 0
 var init_position = Vector2(20.0,180.0)
 var book_is_placed = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var textures = [
+		load("res://Objects/Textures/book1.png"),
+		load("res://Objects/Textures/book2.png"),
+		load("res://Objects/Textures/book3.png")
+		]
+	$BookSprite.texture = textures[randi_range(0,textures.size()-1)]
+	init_position.y = 280 - $BookSprite.texture.get_size().y
+	print($BookSprite.texture.get_size().y)
 	position = init_position
 	$CollisionShape2D.disabled = false
 	screensize = get_viewport_rect().size
 	velocity = Vector2(speed,0)
+	#init sprite
+	
+	
+
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
