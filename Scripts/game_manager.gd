@@ -2,7 +2,7 @@ extends Node
 
 @export var nb_free_slots = 16
 var current_nb_free_slots = 0
-@export var gamemode = 0 #1 is multiplayer, 0 is solo
+@export var gamemode = 1 #1 is multiplayer, 0 is solo
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init_game()

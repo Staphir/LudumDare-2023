@@ -31,7 +31,7 @@ func show_start_messages():
 	await get_tree().create_timer(1).timeout
 	show_message("GO!")
 	get_node("../Player1").set_physics_process(true)
-	get_node("../Player2").set_physics_process(false)
+	get_node("../Player2").set_physics_process(true)
 	await get_tree().create_timer(1.2).timeout
 	$Message.hide()
 	get_node("../InGameMusic").play()

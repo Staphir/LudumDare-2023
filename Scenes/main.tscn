@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://tm78qm5numdu"]
+[gd_scene load_steps=23 format=3 uid="uid://tm78qm5numdu"]
 
 [ext_resource type="Script" path="res://Scripts/instantiate_map.gd" id="1_0376a"]
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_b8eqg"]
@@ -62,10 +62,10 @@ transform = Transform3D(1, 0, 0, 0, 0.645684, 0.763605, 0, -0.763605, 0.645684, 
 fov = 62.2
 
 [node name="Player1" parent="." instance=ExtResource("1_b8eqg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.0295, 0, -9.06602)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -30.0295, 0, -0.06602)
 
 [node name="Player2" parent="." instance=ExtResource("1_b8eqg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -22.0295, 0, -9.06602)
+transform = Transform3D(0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353553, -29.0295, 0, -11.066)
 player_id = 2
 
 [node name="RigidBodyLeft" type="StaticBody3D" parent="."]
@@ -143,11 +143,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.025
 
 [node name="InGameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_oj1q3")
-volume_db = -20.0
+volume_db = -10.0
 
 [node name="StartSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_sl4ni")
-volume_db = -20.0
+volume_db = -10.0
 autoplay = true
 
 [node name="BookShelf_07" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
