@@ -39,6 +39,7 @@ func show_start_messages():
 func game_finished():
 	get_node("../Player1").set_physics_process(false)
 	get_node("../Player2").set_physics_process(false)
+	get_node("../EndSound").play()
 	show_message("OVER BOOKED!")
 	await get_tree().create_timer(1).timeout
 	$Message.hide()

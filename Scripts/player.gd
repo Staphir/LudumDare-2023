@@ -28,23 +28,25 @@ func _physics_process(delta):
 			var bookshelves = get_tree().get_nodes_in_group("bookshelves")
 			if player_id == 1:
 				for bookshelf in bookshelves:
-					if bookshelf.near_1 and have_book:
-						print("Bookshelf %s has %s slots" % [bookshelf.name, str(bookshelf.free_slots)])
-						get_node("../Window%s" % [player_id]).init_mini_game(bookshelf)
-						set_physics_process(false)
-						$Book.set_visible(false)
-						have_book = false
-						break
+					if bookshelf.free_slots > 0:
+						if bookshelf.near_1 and have_book:
+							print("Bookshelf %s has %s slots" % [bookshelf.name, str(bookshelf.free_slots)])
+							get_node("../Window%s" % [player_id]).init_mini_game(bookshelf)
+							set_physics_process(false)
+							$Book.set_visible(false)
+							have_book = false
+							break
 			elif player_id == 2:
 				for bookshelf in bookshelves:
-					if bookshelf.near_2 and have_book:
-						print("Bookshelf %s has %s slots" % [bookshelf.name, str(bookshelf.free_slots)])
-						get_node("../Window%s" % [player_id]).init_mini_game(bookshelf)
-						set_physics_process(false)
-						$Book.set_visible(false)
-						have_book = false
-						break
-			
+					if bookshelf.free_slots > 0:
+						if bookshelf.near_2 and have_book:
+							print("Bookshelf %s has %s slots" % [bookshelf.name, str(bookshelf.free_slots)])
+							get_node("../Window%s" % [player_id]).init_mini_game(bookshelf)
+							set_physics_process(false)
+							$Book.set_visible(false)
+							have_book = false
+							break
+
 
 
 #----------------------- BEGIN movement functions ------------------
