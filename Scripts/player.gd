@@ -24,6 +24,7 @@ func _physics_process(delta):
 		for bookshelf in bookshelves:
 			if bookshelf.near and have_book:
 				print("Bookshelf %s has %s slots" % [bookshelf.name, str(bookshelf.free_slots)])
+				set_physics_process(false)
 				get_node("../Window").init_mini_game(bookshelf)
 				$Book.set_visible(false)
 				have_book = false

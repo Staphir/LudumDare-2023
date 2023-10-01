@@ -32,6 +32,7 @@ func show_start_messages():
 	get_node("../Player1").set_physics_process(true)
 	await get_tree().create_timer(1.2).timeout
 	$Message.hide()
+	get_node("../InGameMusic").play()
 
 func game_finished():
 	get_node("../Player1").set_physics_process(false)

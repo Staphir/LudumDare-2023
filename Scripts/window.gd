@@ -16,6 +16,7 @@ func _process(delta):
 		init_mini_game(bookshelf)
 	if mini_game:
 		if mini_game.mini_game_finished:
+			get_node("../Player1").set_physics_process(true)
 			mini_game.mini_game_finished = false
 			get_node("../Player1").score += 1
 			get_node("../GameManager").current_nb_free_slots -= 1
