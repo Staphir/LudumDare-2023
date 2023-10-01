@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+
+@export var player_id = 1
 #movement vars
 @export var MAX_SPEED = 15
 @export var ACCELERATION = 110
@@ -16,7 +18,7 @@ func _ready():
 func _physics_process(delta):
 	move(delta)
 	
-	if Input.is_action_pressed("select_desk"):
+	if Input.is_action_pressed("select_desk_%s" % [player_id]):
 		if get_node("../ReceptionDesk").near and !have_book:
 			$Book.set_visible(true)
 			have_book = true
@@ -24,7 +26,7 @@ func _physics_process(delta):
 		for bookshelf in bookshelves:
 			if bookshelf.near and have_book:
 				print("Bookshelf %s has %s slots" % [bookshelf.name, str(bookshelf.free_slots)])
-				get_node("../Window").init_mini_game(bookshelf)
+				get_node("../Window%s" % [player_id]).init_mini_game(bookshelf)
 				$Book.set_visible(false)
 				have_book = false
 				break
@@ -34,8 +36,8 @@ func _physics_process(delta):
 #----------------------- BEGIN movement functions ------------------
 
 func get_input_axis():
-	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-	axis.z = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	axis.x = int(Input.is_action_pressed("move_right_%s" % [player_id])) - int(Input.is_action_pressed("move_left_%s" % [player_id]))
+	axis.z = int(Input.is_action_pressed("move_down_%s" % [player_id])) - int(Input.is_action_pressed("move_up_%s" % [player_id]))
 	return axis.normalized()
 
 func move(delta):

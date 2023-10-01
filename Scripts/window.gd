@@ -2,7 +2,7 @@ extends Window
 
 @export var mini_game_scene: PackedScene
 @export var nb_player = 2
-
+@export var player_id = 1
 var mini_game
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +17,7 @@ func _process(delta):
 	if mini_game:
 		if mini_game.mini_game_finished:
 			mini_game.mini_game_finished = false
-			get_node("../Player1").score += 1
+			get_node("../Player%s" % [player_id]).score += 1
 			get_node("../GameManager").current_nb_free_slots -= 1
 			hide()
 
@@ -29,5 +29,6 @@ func init_mini_game(bookshelf):
 		mini_game.queue_free()
 	mini_game = mini_game_scene.instantiate()
 	mini_game.bookshelf = bookshelf
+	mini_game.player_id = player_id
 	add_child(mini_game)
 	show()

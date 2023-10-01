@@ -7,9 +7,11 @@ signal finished
 var nb_slots_total = 5
 var mini_game_finished = false
 var bookshelf
+var player_id = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_mob_book_grid()
+	$Book.player_id = player_id
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

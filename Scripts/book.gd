@@ -9,6 +9,7 @@ var velocity
 var collision_counter = 0
 var init_position = Vector2(20.0,180.0)
 var book_is_placed = false
+var player_id = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +47,7 @@ func _process(delta):
 		
 	if not book_is_placed:
 		# user tries to put the book in
-		if Input.is_action_just_pressed("place_book"):
+		if Input.is_action_just_pressed("place_book_%s" %[player_id]):
 			if is_colliding():
 				position = init_position
 			else:

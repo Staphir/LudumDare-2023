@@ -22,6 +22,7 @@ func update_score(score_name,player_name,score):
 
 func show_start_messages():
 	get_node("../Player1").set_physics_process(false)
+	get_node("../Player2").set_physics_process(false)
 	show_message("3")
 	await get_tree().create_timer(1).timeout
 	show_message("2")
@@ -30,11 +31,13 @@ func show_start_messages():
 	await get_tree().create_timer(1).timeout
 	show_message("GO!")
 	get_node("../Player1").set_physics_process(true)
+	get_node("../Player2").set_physics_process(false)
 	await get_tree().create_timer(1.2).timeout
 	$Message.hide()
 
 func game_finished():
 	get_node("../Player1").set_physics_process(false)
+	get_node("../Player2").set_physics_process(false)
 	show_message("OVER BOOKED!")
 	await get_tree().create_timer(1).timeout
 	$Message.hide()
