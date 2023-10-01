@@ -4,11 +4,13 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	show_start_messages()
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	set_windows_position()
 
 func show_message(text):
 	$Message.text = text
@@ -46,4 +48,9 @@ func game_finished():
 	await get_tree().create_timer(0.5).timeout
 	$Message.show()
 	await get_tree().create_timer(1).timeout
-	$Message.text = ""
+	$Message.hide()
+
+func set_windows_position():
+		var screensize = get_viewport().size
+		get_node("../Window1").position.x = screensize.x - get_node("../Window1").size.x
+		get_node("../Window2").position.x = screensize.x - get_node("../Window2").size.x
