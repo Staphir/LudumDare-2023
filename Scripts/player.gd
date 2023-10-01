@@ -21,9 +21,14 @@ func _physics_process(delta):
 	move(delta)
 	
 	if Input.is_action_pressed("select_desk_%s" % [player_id]):
-		if get_node("../ReceptionDesk").near and !have_book:
-			$Book.set_visible(true)
-			have_book = true
+		if player_id == 1:
+			if get_node("../ReceptionDesk").near_1 and !have_book:
+				$Book.set_visible(true)
+				have_book = true
+		elif player_id ==2:
+			if get_node("../ReceptionDesk").near_2 and !have_book:
+				$Book.set_visible(true)
+				have_book = true
 		else :
 			var bookshelves = get_tree().get_nodes_in_group("bookshelves")
 			if player_id == 1:
