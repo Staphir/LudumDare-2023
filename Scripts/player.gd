@@ -9,16 +9,20 @@ extends CharacterBody3D
 @onready var axis = Vector3.ZERO
 @onready var have_book = false
 
-
 func _ready():
 	$Book.set_visible(false)
 
 func _physics_process(delta):
 	move(delta)
 	
-	if Input.is_action_pressed("select_desk") and get_node("../ReceptionDesk").near and !have_book:
-		$Book.set_visible(true)
-		have_book = true
+	if Input.is_action_pressed("select_desk"):
+		if get_node("../ReceptionDesk").near and !have_book:
+			$Book.set_visible(true)
+			have_book = true
+		if (get_node("../BookShelf_01").near or get_node("../BookShelf_02").near) and have_book:
+			get_node("../Window").init_mini_game()
+			$Book.set_visible(false)
+			have_book = false
 
 
 #----------------------- BEGIN movement functions ------------------
