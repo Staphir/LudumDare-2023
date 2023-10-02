@@ -11,13 +11,8 @@ func _process(delta):
 	pass
 
 
-
 func _on_start_button_button_up():
-	get_tree().change_scene_to_file("res://Scenes/fast_rules.tscn")
-
-
-func _on_quit_button_button_up():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 
 func _on_rules_button_button_up():

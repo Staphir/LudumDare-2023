@@ -1,0 +1,399 @@
+[gd_scene load_steps=26 format=3 uid="uid://dqae2uvn240y2"]
+
+[ext_resource type="Script" path="res://Scripts/fast_rules.gd" id="1_duhkq"]
+[ext_resource type="Texture2D" uid="uid://b0v7oorj2x0kh" path="res://Objects/Textures/book1.png" id="2_y3jfi"]
+[ext_resource type="Texture2D" uid="uid://bhc68g6k1uol4" path="res://Objects/Textures/book1_pressed.png" id="3_pcefc"]
+[ext_resource type="Texture2D" uid="uid://0m56csti5654" path="res://Objects/Textures/book1_hover.png" id="4_6na0c"]
+[ext_resource type="Texture2D" uid="uid://dv4uego72ogr0" path="res://Objects/Textures/book1_focus.png" id="5_vfff1"]
+[ext_resource type="FontFile" uid="uid://qh2srf4234rf" path="res://Fonts/Xolonium-Regular.ttf" id="6_hxehf"]
+[ext_resource type="Texture2D" uid="uid://bgy22uapefx4o" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Up-Key_1.png" id="7_op7c6"]
+[ext_resource type="Texture2D" uid="uid://c2kontqhxtwkm" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Down-Key_1.png" id="8_qifjb"]
+[ext_resource type="Texture2D" uid="uid://bmbu7f6lbsvkd" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Left-Key_1.png" id="9_x82pu"]
+[ext_resource type="Texture2D" uid="uid://c2l1sm3lym4lq" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Right-Key_1.png" id="10_db8jf"]
+[ext_resource type="Texture2D" uid="uid://c8laey6cr4oor" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Enter-Key.png" id="11_cdhlu"]
+[ext_resource type="Texture2D" uid="uid://diep30m0jkkfj" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Space-Key.png" id="12_ebad0"]
+[ext_resource type="Texture2D" uid="uid://ctqt381b2lmve" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/W-Key.png" id="13_wcwm7"]
+[ext_resource type="Texture2D" uid="uid://cbbssvpkmll6s" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/S-Key.png" id="14_gyqfy"]
+[ext_resource type="Texture2D" uid="uid://c1ppldl3uirxu" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/A-Key.png" id="15_4j13n"]
+[ext_resource type="Texture2D" uid="uid://d0e03bxummhtp" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/D-Key.png" id="16_jmr2i"]
+[ext_resource type="Texture2D" uid="uid://dte6cqani3uun" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/R-Key.png" id="17_vup7l"]
+[ext_resource type="Texture2D" uid="uid://dhtavygcc5tgm" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/F-Key.png" id="18_7bn18"]
+[ext_resource type="Texture2D" uid="uid://c0k6gnkqn0vck" path="res://Objects/Textures/SimpleFlatKeys/button_xbox_analog_blank.png" id="19_yv0cj"]
+[ext_resource type="Texture2D" uid="uid://c7gfxtwcftw8f" path="res://Objects/Textures/SimpleFlatKeys/button_xbox_digital_a_3.png" id="20_4yxof"]
+[ext_resource type="Texture2D" uid="uid://ddo10fsabdkwj" path="res://Objects/Textures/SimpleFlatKeys/button_xbox_digital_b_3.png" id="21_l5soe"]
+[ext_resource type="Texture2D" uid="uid://ehvsksif3v44" path="res://Objects/Textures/book2.png" id="22_b7oo3"]
+[ext_resource type="Texture2D" uid="uid://dq27lj2kmpfl2" path="res://Objects/Textures/book2_pressed.png" id="23_umvka"]
+[ext_resource type="Texture2D" uid="uid://dx377dbo8dvog" path="res://Objects/Textures/book2_hover.png" id="24_rk8my"]
+[ext_resource type="Texture2D" uid="uid://6n2nbkmroyg1" path="res://Objects/Textures/book2_focus.png" id="25_5f0ik"]
+
+[node name="FastRules" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_duhkq")
+
+[node name="Rules" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 2402.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_hxehf")
+theme_override_font_sizes/font_size = 48
+text = "First time play? Checkout the rules! 
+
+
+Controls reminder:"
+
+[node name="Step5" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -32.0
+offset_top = 136.0
+offset_right = 8.0
+offset_bottom = 176.0
+metadata/_edit_group_ = true
+
+[node name="GridContainer" type="GridContainer" parent="Step5"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 257.0
+offset_right = 563.0
+offset_bottom = 595.0
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="UpTexture" type="TextureRect" parent="Step5/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_op7c6")
+expand_mode = 2
+
+[node name="Up" type="Label" parent="Step5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Up"
+
+[node name="DownTexture" type="TextureRect" parent="Step5/GridContainer"]
+layout_mode = 2
+texture = ExtResource("8_qifjb")
+expand_mode = 2
+
+[node name="Down" type="Label" parent="Step5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Down"
+
+[node name="LeftTexture" type="TextureRect" parent="Step5/GridContainer"]
+layout_mode = 2
+texture = ExtResource("9_x82pu")
+expand_mode = 2
+
+[node name="Left" type="Label" parent="Step5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Left"
+
+[node name="RightTexture" type="TextureRect" parent="Step5/GridContainer"]
+layout_mode = 2
+texture = ExtResource("10_db8jf")
+expand_mode = 2
+
+[node name="Right" type="Label" parent="Step5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Right"
+
+[node name="SelectTexture" type="TextureRect" parent="Step5/GridContainer"]
+layout_mode = 2
+texture = ExtResource("11_cdhlu")
+expand_mode = 2
+
+[node name="Select" type="Label" parent="Step5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Get and drop book"
+
+[node name="PlaceTexture" type="TextureRect" parent="Step5/GridContainer"]
+layout_mode = 2
+texture = ExtResource("12_ebad0")
+expand_mode = 2
+
+[node name="PlaceBook" type="Label" parent="Step5/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Place Book (mini-game)"
+
+[node name="GridContainer2" type="GridContainer" parent="Step5"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 253.0
+offset_right = 1079.0
+offset_bottom = 591.0
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="UpTexture" type="TextureRect" parent="Step5/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("13_wcwm7")
+expand_mode = 2
+
+[node name="Up" type="Label" parent="Step5/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Up"
+
+[node name="DownTexture" type="TextureRect" parent="Step5/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("14_gyqfy")
+expand_mode = 2
+
+[node name="Down" type="Label" parent="Step5/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Down"
+
+[node name="LeftTexture" type="TextureRect" parent="Step5/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("15_4j13n")
+expand_mode = 2
+
+[node name="Left" type="Label" parent="Step5/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Left"
+
+[node name="RightTexture" type="TextureRect" parent="Step5/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("16_jmr2i")
+expand_mode = 2
+
+[node name="Right" type="Label" parent="Step5/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Right"
+
+[node name="SelectTexture" type="TextureRect" parent="Step5/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("17_vup7l")
+expand_mode = 2
+
+[node name="Select" type="Label" parent="Step5/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Get and drop book"
+
+[node name="PlaceTexture" type="TextureRect" parent="Step5/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("18_7bn18")
+expand_mode = 2
+
+[node name="PlaceBook" type="Label" parent="Step5/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Place Book (mini-game)"
+
+[node name="GridContainer3" type="GridContainer" parent="Step5"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 705.0
+offset_right = 563.0
+offset_bottom = 1043.0
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="UpTexture" type="TextureRect" parent="Step5/GridContainer3"]
+layout_mode = 2
+texture = ExtResource("19_yv0cj")
+expand_mode = 2
+
+[node name="Up" type="Label" parent="Step5/GridContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Move (left Joystick)"
+
+[node name="SelectTexture" type="TextureRect" parent="Step5/GridContainer3"]
+layout_mode = 2
+texture = ExtResource("20_4yxof")
+expand_mode = 2
+
+[node name="Select" type="Label" parent="Step5/GridContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Get and drop book"
+
+[node name="PlaceTexture" type="TextureRect" parent="Step5/GridContainer3"]
+layout_mode = 2
+texture = ExtResource("21_l5soe")
+expand_mode = 2
+
+[node name="PlaceBook" type="Label" parent="Step5/GridContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Place Book (mini-game)"
+
+[node name="Manette" type="Label" parent="Step5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 80.0
+offset_top = 616.0
+offset_right = 356.0
+offset_bottom = 704.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_hxehf")
+theme_override_font_sizes/font_size = 48
+text = "Controller"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardP1" type="Label" parent="Step5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 80.0
+offset_top = 176.0
+offset_right = 432.0
+offset_bottom = 264.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_hxehf")
+theme_override_font_sizes/font_size = 48
+text = "Keyboard P1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardP2" type="Label" parent="Step5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 596.0
+offset_top = 176.0
+offset_right = 948.0
+offset_bottom = 264.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_hxehf")
+theme_override_font_sizes/font_size = 48
+text = "Keyboard P2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1792.0
+offset_top = 880.0
+offset_right = 1888.0
+offset_bottom = 1198.0
+rotation = 1.5708
+texture_normal = ExtResource("2_y3jfi")
+texture_pressed = ExtResource("3_pcefc")
+texture_hover = ExtResource("4_6na0c")
+texture_focused = ExtResource("5_vfff1")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="StartButton"]
+layout_mode = 0
+offset_top = 318.0
+offset_right = 318.0
+offset_bottom = 414.0
+rotation = -1.5708
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_hxehf")
+theme_override_font_sizes/font_size = 48
+text = "START!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RulesButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1792.0
+offset_top = 744.0
+offset_right = 1885.0
+offset_bottom = 1061.0
+rotation = 1.5708
+texture_normal = ExtResource("22_b7oo3")
+texture_pressed = ExtResource("23_umvka")
+texture_hover = ExtResource("24_rk8my")
+texture_focused = ExtResource("25_5f0ik")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Label2" type="Label" parent="RulesButton"]
+layout_mode = 0
+offset_top = 317.0
+offset_right = 315.0
+offset_bottom = 413.0
+rotation = -1.5708
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "RULES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="RulesButton" to="." method="_on_rules_button_button_up"]
