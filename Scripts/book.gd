@@ -7,7 +7,7 @@ signal book_placed_sig #to notice collicion
 var screensize
 var velocity
 var collision_counter = 0
-var init_position = Vector2(20.0,180.0)
+var init_position = Vector2(0,180.0)
 var book_is_placed = false
 var player_id = 1
 

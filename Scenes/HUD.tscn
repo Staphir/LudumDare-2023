@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://qh2srf4234rf" path="res://Fonts/Xolonium-Regular.ttf" id="1_lqssw"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 1
 script = ExtResource("1_gkwmn")
 
 [node name="SpaceRemainingLabel" type="Label" parent="."]

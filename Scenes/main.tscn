@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://tm78qm5numdu"]
+[gd_scene load_steps=25 format=3 uid="uid://tm78qm5numdu"]
 
 [ext_resource type="Script" path="res://Scripts/instantiate_map.gd" id="1_0376a"]
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_b8eqg"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://kty11touol7k" path="res://Sounds/music/in_game_music.mp3" id="16_oj1q3"]
 [ext_resource type="AudioStream" uid="uid://c04m1l1v0uc3i" path="res://Sounds/countdown-sound-effect-8-bit-151797.mp3" id="17_sl4ni"]
 [ext_resource type="AudioStream" uid="uid://d1w2f3k2ig38r" path="res://Sounds/end_sound.mp3" id="18_8tvtu"]
+[ext_resource type="PackedScene" uid="uid://bb6lk51jf8fyw" path="res://Scenes/pause_menu.tscn" id="18_g15wo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hme5v"]
 size = Vector3(200, 2, 100)
@@ -241,3 +242,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -24.79
 [node name="EndSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_8tvtu")
 volume_db = -10.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("18_g15wo")]

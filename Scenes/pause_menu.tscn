@@ -1,0 +1,354 @@
+[gd_scene load_steps=18 format=3 uid="uid://bb6lk51jf8fyw"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_ujioq"]
+[ext_resource type="Texture2D" uid="uid://bgy22uapefx4o" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Up-Key_1.png" id="2_2cjcs"]
+[ext_resource type="Texture2D" uid="uid://ctqt381b2lmve" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/W-Key.png" id="2_pwidv"]
+[ext_resource type="FontFile" uid="uid://qh2srf4234rf" path="res://Fonts/Xolonium-Regular.ttf" id="2_ul4tp"]
+[ext_resource type="Texture2D" uid="uid://cbbssvpkmll6s" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/S-Key.png" id="3_b4cra"]
+[ext_resource type="Texture2D" uid="uid://c2kontqhxtwkm" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Down-Key_1.png" id="3_r0my3"]
+[ext_resource type="Texture2D" uid="uid://bmbu7f6lbsvkd" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Left-Key_1.png" id="4_ir8rc"]
+[ext_resource type="Texture2D" uid="uid://c1ppldl3uirxu" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/A-Key.png" id="4_sd7c1"]
+[ext_resource type="Texture2D" uid="uid://c2l1sm3lym4lq" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Right-Key_1.png" id="5_02cbl"]
+[ext_resource type="Texture2D" uid="uid://d0e03bxummhtp" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/D-Key.png" id="5_hq8on"]
+[ext_resource type="Texture2D" uid="uid://dte6cqani3uun" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/R-Key.png" id="6_blsli"]
+[ext_resource type="Texture2D" uid="uid://c8laey6cr4oor" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Enter-Key.png" id="6_cbwwu"]
+[ext_resource type="Texture2D" uid="uid://dhtavygcc5tgm" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/F-Key.png" id="7_do1du"]
+[ext_resource type="Texture2D" uid="uid://diep30m0jkkfj" path="res://Objects/Textures/SimpleFlatKeys/SimpleFlatKeys/Dark/Space-Key.png" id="7_txnog"]
+[ext_resource type="Texture2D" uid="uid://c0k6gnkqn0vck" path="res://Objects/Textures/SimpleFlatKeys/button_xbox_analog_blank.png" id="14_m8l4k"]
+[ext_resource type="Texture2D" uid="uid://c7gfxtwcftw8f" path="res://Objects/Textures/SimpleFlatKeys/button_xbox_digital_a_3.png" id="15_umid7"]
+[ext_resource type="Texture2D" uid="uid://ddo10fsabdkwj" path="res://Objects/Textures/SimpleFlatKeys/button_xbox_digital_b_3.png" id="16_1rspm"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ujioq")
+
+[node name="Window" type="Window" parent="."]
+initial_position = 2
+size = Vector2i(1300, 1050)
+borderless = true
+transparent = true
+
+[node name="GridContainer" type="GridContainer" parent="Window"]
+offset_left = 100.0
+offset_top = 257.0
+offset_right = 563.0
+offset_bottom = 595.0
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="UpTexture" type="TextureRect" parent="Window/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_2cjcs")
+expand_mode = 2
+
+[node name="Up" type="Label" parent="Window/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Up"
+
+[node name="DownTexture" type="TextureRect" parent="Window/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_r0my3")
+expand_mode = 2
+
+[node name="Down" type="Label" parent="Window/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Down"
+
+[node name="LeftTexture" type="TextureRect" parent="Window/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_ir8rc")
+expand_mode = 2
+
+[node name="Left" type="Label" parent="Window/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Left"
+
+[node name="RightTexture" type="TextureRect" parent="Window/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_02cbl")
+expand_mode = 2
+
+[node name="Right" type="Label" parent="Window/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Right"
+
+[node name="SelectTexture" type="TextureRect" parent="Window/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_cbwwu")
+expand_mode = 2
+
+[node name="Select" type="Label" parent="Window/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Get and drop book"
+
+[node name="PlaceTexture" type="TextureRect" parent="Window/GridContainer"]
+layout_mode = 2
+texture = ExtResource("7_txnog")
+expand_mode = 2
+
+[node name="PlaceBook" type="Label" parent="Window/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Place Book (mini-game)"
+
+[node name="GridContainer2" type="GridContainer" parent="Window"]
+offset_left = 616.0
+offset_top = 253.0
+offset_right = 1079.0
+offset_bottom = 591.0
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="UpTexture" type="TextureRect" parent="Window/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("2_pwidv")
+expand_mode = 2
+
+[node name="Up" type="Label" parent="Window/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Up"
+
+[node name="DownTexture" type="TextureRect" parent="Window/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("3_b4cra")
+expand_mode = 2
+
+[node name="Down" type="Label" parent="Window/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Down"
+
+[node name="LeftTexture" type="TextureRect" parent="Window/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("4_sd7c1")
+expand_mode = 2
+
+[node name="Left" type="Label" parent="Window/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Left"
+
+[node name="RightTexture" type="TextureRect" parent="Window/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("5_hq8on")
+expand_mode = 2
+
+[node name="Right" type="Label" parent="Window/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Right"
+
+[node name="SelectTexture" type="TextureRect" parent="Window/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("6_blsli")
+expand_mode = 2
+
+[node name="Select" type="Label" parent="Window/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Get and drop book"
+
+[node name="PlaceTexture" type="TextureRect" parent="Window/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("7_do1du")
+expand_mode = 2
+
+[node name="PlaceBook" type="Label" parent="Window/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Place Book (mini-game)"
+
+[node name="GridContainer3" type="GridContainer" parent="Window"]
+offset_left = 100.0
+offset_top = 705.0
+offset_right = 563.0
+offset_bottom = 1043.0
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="UpTexture" type="TextureRect" parent="Window/GridContainer3"]
+layout_mode = 2
+texture = ExtResource("14_m8l4k")
+expand_mode = 2
+
+[node name="Up" type="Label" parent="Window/GridContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Move (left Joystick)"
+
+[node name="SelectTexture" type="TextureRect" parent="Window/GridContainer3"]
+layout_mode = 2
+texture = ExtResource("15_umid7")
+expand_mode = 2
+
+[node name="Select" type="Label" parent="Window/GridContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Get and drop book"
+
+[node name="PlaceTexture" type="TextureRect" parent="Window/GridContainer3"]
+layout_mode = 2
+texture = ExtResource("16_1rspm")
+expand_mode = 2
+
+[node name="PlaceBook" type="Label" parent="Window/GridContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 36
+text = "Place Book (mini-game)"
+
+[node name="Message" type="Label" parent="Window"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -528.0
+offset_right = 528.0
+offset_bottom = 158.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_ul4tp")
+theme_override_font_sizes/font_size = 128
+text = "GAME PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Manette" type="Label" parent="Window"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -550.0
+offset_top = 616.0
+offset_right = -274.0
+offset_bottom = 704.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_ul4tp")
+theme_override_font_sizes/font_size = 48
+text = "Controller"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardP1" type="Label" parent="Window"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -550.0
+offset_top = 176.0
+offset_right = -198.0
+offset_bottom = 264.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_ul4tp")
+theme_override_font_sizes/font_size = 48
+text = "Keyboard P1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardP2" type="Label" parent="Window"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 176.0
+offset_right = 318.0
+offset_bottom = 264.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_ul4tp")
+theme_override_font_sizes/font_size = 48
+text = "Keyboard P2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Label" parent="Window"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -550.0
+offset_top = 920.0
+offset_right = -54.0
+offset_bottom = 1008.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_ul4tp")
+theme_override_font_sizes/font_size = 48
+text = "Escape to resume..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

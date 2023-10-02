@@ -10,8 +10,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_windows_position()
-
+	#set_windows_position()
+	pass
 func show_message(text):
 	$Message.text = text
 	$Message.show()
