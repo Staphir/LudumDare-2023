@@ -11,9 +11,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("debug_win"):
-		var bookshelf = null
-		init_mini_game(bookshelf)
 	if mini_game:
 		if mini_game.mini_game_finished:
 			get_node("../Player%s" % [player_id]).set_physics_process(true)
