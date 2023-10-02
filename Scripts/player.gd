@@ -3,10 +3,10 @@ extends CharacterBody3D
 var material_p2 = preload("res://Objects/Materials/player_2.tres")
 @export var player_id = 1
 #movement vars
-@export var MAX_SPEED = 15
-@export var ACCELERATION = 110
-@export var FRICTION = 100
-@export var ANGULAR_ACCELERATION = 7
+@export var MAX_SPEED = 25
+@export var ACCELERATION = 120
+@export var FRICTION = 120
+@export var ANGULAR_ACCELERATION = 10
 
 @onready var axis = Vector3.ZERO
 @onready var have_book = false

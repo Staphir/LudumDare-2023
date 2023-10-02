@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://tm78qm5numdu"]
+[gd_scene load_steps=37 format=3 uid="uid://tm78qm5numdu"]
 
 [ext_resource type="Script" path="res://Scripts/instantiate_map.gd" id="1_0376a"]
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_b8eqg"]
@@ -19,6 +19,10 @@
 [ext_resource type="AudioStream" uid="uid://kty11touol7k" path="res://Sounds/music/in_game_music.mp3" id="16_oj1q3"]
 [ext_resource type="AudioStream" uid="uid://c04m1l1v0uc3i" path="res://Sounds/countdown-sound-effect-8-bit-151797.mp3" id="17_sl4ni"]
 [ext_resource type="AudioStream" uid="uid://d1w2f3k2ig38r" path="res://Sounds/end_sound.mp3" id="18_8tvtu"]
+[ext_resource type="Material" uid="uid://dcpgbb0cfa5tf" path="res://Objects/Materials/wall.tres" id="20_sqn6n"]
+[ext_resource type="Texture2D" uid="uid://ciihyf1401iar" path="res://Objects/Textures/Environement/asphalt_02_diff_1k.png" id="21_66qal"]
+[ext_resource type="Texture2D" uid="uid://c5g7tewiq3fsg" path="res://Objects/Textures/Environement/asphalt_02_nor_gl_1k.png" id="22_a6lte"]
+[ext_resource type="Texture2D" uid="uid://7lloy7t6nb27" path="res://Objects/Textures/Environement/asphalt_02_rough_1k.png" id="23_x72ut"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hme5v"]
 size = Vector3(200, 2, 100)
@@ -29,27 +33,55 @@ albedo_texture_force_srgb = true
 roughness_texture = ExtResource("4_ak67l")
 normal_enabled = true
 normal_texture = ExtResource("3_2ajsl")
-uv1_scale = Vector3(80, 80, 80)
+uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4un2i"]
 material = SubResource("StandardMaterial3D_sqan0")
-size = Vector3(300, 2, 200)
+size = Vector3(200, 2, 100)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4lqdt"]
-size = Vector3(1.53461, 10, 33.4827)
+[sub_resource type="BoxMesh" id="BoxMesh_nn3de"]
+material = ExtResource("20_sqn6n")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v8cld"]
-size = Vector3(70.1105, 11.2186, 1.60464)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6tfdp"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ooq0l"]
-size = Vector3(70.2105, 10.0438, 1.62392)
+[sub_resource type="BoxMesh" id="BoxMesh_6j1yq"]
+material = ExtResource("20_sqn6n")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yr63l"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nr218"]
+material = ExtResource("20_sqn6n")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ctqa7"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4pucu"]
+size = Vector3(1, 10.0058, 15.4288)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jy1uv"]
+albedo_texture = ExtResource("21_66qal")
+albedo_texture_force_srgb = true
+roughness_texture = ExtResource("23_x72ut")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("22_a6lte")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4jv5w"]
+material = SubResource("StandardMaterial3D_jy1uv")
+size = Vector2(450, 450)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e074u"]
+size = Vector3(58, 18.2129, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_0376a")
 
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42397, 0, -25.5107)
-collision_mask = 15
+transform = Transform3D(0.327185, 0, 0, 0, 1, 0, 0, 0, 1, -8.7041, 0, -25.5107)
+collision_mask = 14
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_hme5v")
@@ -59,57 +91,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_4un2i")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.222821, 0.600553, 0.767911, -0.75156, -0.395875, 0.527675, 0.620893, -0.694708, 0.363142, 29.673, 24.4539, -40.3758)
+transform = Transform3D(0.193579, 0.632344, 0.750112, -0.75156, -0.395875, 0.527675, 0.630623, -0.665901, 0.398612, 29.4326, 18.0556, -37.3984)
+light_color = Color(0.898039, 0.937255, 1, 1)
 shadow_enabled = true
 
 [node name="MainCameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.645684, 0.763605, 0, -0.763605, 0.645684, 1.37399, 29.0362, 16.6476)
+transform = Transform3D(1, 0, 0, 0, 0.645684, 0.763605, 0, -0.763605, 0.645684, -1.016, 15.491, -11.112)
+visible = false
 
 [node name="MainCamera" type="Camera3D" parent="MainCameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 8.31693, -3.10922, 36.0349)
-keep_aspect = 0
 
 [node name="Player1" parent="." instance=ExtResource("1_b8eqg")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -30.0295, 0, -0.06602)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24.4423, 2.38403, -19.9502)
 
 [node name="Player2" parent="." instance=ExtResource("1_b8eqg")]
-transform = Transform3D(0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353553, -29.0295, 0, -11.066)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24.8873, 0, -14.8724)
 player_id = 2
 
-[node name="RigidBodyLeft" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26274, 0, 0)
-collision_mask = 15
-
-[node name="CollisionShapeLeft" type="CollisionShape3D" parent="RigidBodyLeft"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2207, 4.20216, -0.946642)
-shape = SubResource("BoxShape3D_4lqdt")
-
-[node name="RigidBodyRight" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.933012, 0, 0)
-collision_mask = 15
-
-[node name="CollisionShapeRight" type="CollisionShape3D" parent="RigidBodyRight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3673, 4.20216, -0.946642)
-shape = SubResource("BoxShape3D_4lqdt")
-
-[node name="RigidBodyTop" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.05704)
-collision_mask = 15
-
-[node name="CollisionShapeTop" type="CollisionShape3D" parent="RigidBodyTop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974155, 3.82954, -12.3049)
-shape = SubResource("BoxShape3D_v8cld")
-
-[node name="RigidBodyBottom" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.32917)
-collision_mask = 15
-
-[node name="CollisionShapeBottom" type="CollisionShape3D" parent="RigidBodyBottom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.019, 4.13737, 10.1874)
-shape = SubResource("BoxShape3D_ooq0l")
-
 [node name="ReceptionDesk" parent="." instance=ExtResource("5_xbi3l")]
-transform = Transform3D(0.4851, 0, 0.874459, 0, 1, 0, -0.874459, 0, 0.4851, -30.3645, 0, -5.60963)
+transform = Transform3D(-0.000811279, 0, 1.5, 0, 1.5, 0, -1.5, 0, -0.000811279, -31.0889, 0, -17.661)
 
 [node name="Window1" type="Window" parent="."]
 position = Vector2i(1280, 10)
@@ -132,22 +133,13 @@ player_id = 2
 script = ExtResource("9_1qc27")
 
 [node name="BookShelf_01" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9632, 0, -13.0838)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -32.32, -0.0153809, -44.0714)
 
 [node name="BookShelf_02" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9891, 0, -13.1122)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -6.15151, 0, -72.4368)
 
 [node name="BookShelf_03" parent="." groups=["bookshelves"] instance=ExtResource("10_5w141")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92575, 0, -3.12842)
-
-[node name="BookShelf_04" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9932, 0, -3.12095)
-
-[node name="BookShelf_05" parent="." groups=["bookshelves"] instance=ExtResource("12_lkbuj")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.0181, 0, -11.1253)
-
-[node name="BookShelf_06" parent="." groups=["bookshelves"] instance=ExtResource("13_joygf")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.025, 0, 0.894646)
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 20.366, 0, -58.3139)
 
 [node name="InGameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_oj1q3")
@@ -159,92 +151,149 @@ volume_db = -10.0
 autoplay = true
 
 [node name="BookShelf_07" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0271, 0, -13.1071)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -16.1635, 0, -72.0484)
 
 [node name="BookShelf_08" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98382, 0, -13.1263)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -26.1207, 0, -71.9672)
 
 [node name="BookShelf_09" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981743, 0, -13.129)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4.31041, 0, -72.067)
 
 [node name="BookShelf_10" parent="." groups=["bookshelves"] instance=ExtResource("10_5w141")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.6269, 0, 7.90231)
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 19.9951, 0, -36.3592)
 
 [node name="BookShelf_11" parent="." groups=["bookshelves"] instance=ExtResource("10_5w141")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.997652, 0, -3.10303)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -32.4101, 0, 0.990832)
 
 [node name="BookShelf_12" parent="." groups=["bookshelves"] instance=ExtResource("10_5w141")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97979, 0, -3.11687)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.04979, 0, -2.42901)
 
 [node name="BookShelf_13" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.006, 0, -3.1064)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.62559, 0, -61.7795)
 
 [node name="BookShelf_14" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.001, 0, -3.09399)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -32.0005, 0, -58.2809)
 
 [node name="BookShelf_15" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27728, 0, 4.91716)
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, -9.63662, 0, 11.804)
 
 [node name="BookShelf_16" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.28018, 0, 6.73338)
+transform = Transform3D(-1.06066, 0, -1.06066, 0, 1.5, 0, 1.06066, 0, -1.06066, 16.9654, 0, -9.99275)
 
 [node name="BookShelf_17" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.00125, 0, 11.0951)
+transform = Transform3D(-1.5, 0, -2.26494e-07, 0, 1.5, 0, 2.26494e-07, 0, -1.5, 18.1982, 0, 11.7727)
 
 [node name="BookShelf_18" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.988, 0, 4.887)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.65267, 0, -61.9236)
 
 [node name="BookShelf_19" parent="." groups=["bookshelves"] instance=ExtResource("11_8txq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9942, 0, 4.89524)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -12.4309, 0, -2.21264)
 
 [node name="BookShelf_20" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01916, 0, -13.0888)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14.9964, 0, -72.0683)
 
 [node name="BookShelf_21" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0016, 0, -13.1089)
-
-[node name="BookShelf_22" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.003, 0, -13.107)
-
-[node name="BookShelf_23" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.994, 0, -13.1079)
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 20.014, 0, -20.0336)
 
 [node name="BookShelf_24" parent="." groups=["bookshelves"] instance=ExtResource("12_lkbuj")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.011, 0, -5.11472)
+transform = Transform3D(-1.5, 0, -2.26494e-07, 0, 1.5, 0, 2.26494e-07, 0, -1.5, -26.5999, 0, 12.0592)
 
-[node name="BookShelf_25" parent="." groups=["bookshelves"] instance=ExtResource("13_joygf")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.0085, 0, 6.90095)
+[node name="BookShelf_25" parent="." groups=["bookshelves"] instance=ExtResource("12_lkbuj")]
+transform = Transform3D(-1.5, 0, -2.26494e-07, 0, 1.5, 0, 2.26494e-07, 0, -1.5, 5.11127, 0, 11.9064)
 
-[node name="BookShelf_26" parent="." groups=["bookshelves"] instance=ExtResource("12_lkbuj")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 26.9844, 0, 10.9095)
+[node name="BookShelf_26" parent="." groups=["bookshelves"] instance=ExtResource("13_joygf")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 19.4813, 0, 4.47939)
 
-[node name="BookShelf_27" parent="." groups=["bookshelves"] instance=ExtResource("12_lkbuj")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.971362, 0, 10.893)
+[node name="BookShelf_27" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.99595, 0, -2.41929)
 
-[node name="BookShelf_28" parent="." groups=["bookshelves"] instance=ExtResource("12_lkbuj")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.01081, 0, 10.9224)
+[node name="BookShelf_28" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.3944, 0, -2.42214)
 
-[node name="BookShelf_29" parent="." groups=["bookshelves"] instance=ExtResource("13_joygf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0122, 0, -3.10286)
+[node name="BookShelf_29" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -31.9584, 0, -31.6978)
 
 [node name="BookShelf_30" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.802, 0, 4.91788)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.1328, 0, -30.9863)
 
-[node name="BookShelf_31" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.013, 0, 10.9055)
+[node name="BookShelf_31" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
+transform = Transform3D(1.06066, 0, -1.06066, 0, 1.5, 0, 1.06066, 0, 1.06066, 16.9921, 0, -28.4748)
 
-[node name="BookShelf_32" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 13.0051, 0, 10.8982)
-
-[node name="BookShelf_33" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.2502, 0, 10.8946)
-
-[node name="BookShelf_34" parent="." groups=["bookshelves"] instance=ExtResource("9_eyt48")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18.9945, 0, 10.8783)
-
-[node name="BookShelf_35" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -24.7905, 0, 10.915)
+[node name="BookShelf_32" parent="." groups=["bookshelves"] instance=ExtResource("8_uuecv")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 6.08742, 0, -6.4177)
 
 [node name="EndSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_8tvtu")
 volume_db = -10.0
+
+[node name="WallLeft_01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 16.6403, 0, 0, 0, 49.2278, -34, 7.55172, -49.1242)
+mesh = SubResource("BoxMesh_nn3de")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallLeft_01"]
+collision_mask = 14
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallLeft_01/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6tfdp")
+
+[node name="WallLeft_02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 16.6403, 0, 0, 0, 38.5461, -34, 7.6582, 9.07843)
+mesh = SubResource("BoxMesh_nn3de")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallLeft_02"]
+collision_mask = 14
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallLeft_02/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6tfdp")
+
+[node name="WallRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 17.1817, 0, 0, 0, 111.247, 22, 7.49761, -18.252)
+mesh = SubResource("BoxMesh_6j1yq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallRight"]
+collision_mask = 14
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallRight/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yr63l")
+
+[node name="WallTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(57, 0, 0, 0, 18.3648, 0, 0, 0, 1, -5.80788, 6.85488, -74.1621)
+mesh = SubResource("BoxMesh_nr218")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallTop"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallTop/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ctqa7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8001, 1.79925, -17.2774)
+collision_mask = 14
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13069, 2.79357, 0)
+shape = SubResource("BoxShape3D_4pucu")
+
+[node name="EnvironementGround" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214844, -0.1, -71.7713)
+mesh = SubResource("PlaneMesh_4jv5w")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09587, 7.08272, 13.1145)
+shape = SubResource("BoxShape3D_e074u")
+
+[node name="BookShelf_04" parent="." instance=ExtResource("12_lkbuj")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, -7.34406, 0, -44.0092)
+
+[node name="BookShelf_05" parent="." instance=ExtResource("12_lkbuj")]
+transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, -7.35457, 0, -35.953)
+
+[node name="BookShelf_06" parent="." instance=ExtResource("12_lkbuj")]
+transform = Transform3D(-5.68248e-08, 0, -1.3, 0, 1.3, 0, 1.3, 0, -5.68248e-08, -4.28877, 0, -35.9194)
+
+[node name="BookShelf_22" parent="." instance=ExtResource("12_lkbuj")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, -4.28018, 0, -44.0322)
+
+[node name="BookShelf_23" parent="." instance=ExtResource("13_joygf")]
+transform = Transform3D(-5.68248e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.68248e-08, 12.6482, 0, -19.51)
