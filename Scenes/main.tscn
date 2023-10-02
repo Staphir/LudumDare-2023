@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://tm78qm5numdu"]
+[gd_scene load_steps=38 format=3 uid="uid://tm78qm5numdu"]
 
 [ext_resource type="PackedScene" uid="uid://xrlx06e4ifc0" path="res://Scenes/player.tscn" id="1_b8eqg"]
 [ext_resource type="Texture2D" uid="uid://esy1yjkhgwi7" path="res://Objects/Textures/Ground/laminate_floor_03_diff_1k.png" id="2_iw00d"]
@@ -19,10 +19,11 @@
 [ext_resource type="AudioStream" uid="uid://c04m1l1v0uc3i" path="res://Sounds/countdown-sound-effect-8-bit-151797.mp3" id="17_sl4ni"]
 [ext_resource type="AudioStream" uid="uid://d1w2f3k2ig38r" path="res://Sounds/end_sound.mp3" id="18_8tvtu"]
 [ext_resource type="PackedScene" uid="uid://bb6lk51jf8fyw" path="res://Scenes/pause_menu.tscn" id="18_g15wo"]
+[ext_resource type="Texture2D" uid="uid://j4n6hado063l" path="res://Objects/Textures/Environement/gravel_embedded_concrete_diff_1k.png" id="20_qgi7b"]
 [ext_resource type="Material" uid="uid://dcpgbb0cfa5tf" path="res://Objects/Materials/wall.tres" id="20_sqn6n"]
-[ext_resource type="Texture2D" uid="uid://ciihyf1401iar" path="res://Objects/Textures/Environement/asphalt_02_diff_1k.png" id="21_66qal"]
-[ext_resource type="Texture2D" uid="uid://c5g7tewiq3fsg" path="res://Objects/Textures/Environement/asphalt_02_nor_gl_1k.png" id="22_a6lte"]
-[ext_resource type="Texture2D" uid="uid://7lloy7t6nb27" path="res://Objects/Textures/Environement/asphalt_02_rough_1k.png" id="23_x72ut"]
+[ext_resource type="Texture2D" uid="uid://cax6qcnrxyouc" path="res://Objects/Textures/Environement/gravel_embedded_concrete_ao_1k.png" id="21_4fcne"]
+[ext_resource type="Texture2D" uid="uid://s4lmrwedsx47" path="res://Objects/Textures/Environement/gravel_embedded_concrete_nor_gl_1k.png" id="22_y78qj"]
+[ext_resource type="Texture2D" uid="uid://dfyssh4mxxphu" path="res://Objects/Textures/Environement/gravel_embedded_concrete_rough_1k.png" id="23_7vhkj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hme5v"]
 size = Vector3(71.6095, 2, 98.2217)
@@ -61,13 +62,17 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 size = Vector3(1, 10.0058, 15.4288)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jy1uv"]
-albedo_texture = ExtResource("21_66qal")
+albedo_texture = ExtResource("20_qgi7b")
 albedo_texture_force_srgb = true
-roughness_texture = ExtResource("23_x72ut")
+roughness_texture = ExtResource("23_7vhkj")
 roughness_texture_channel = 4
 normal_enabled = true
-normal_texture = ExtResource("22_a6lte")
-uv1_scale = Vector3(3, 3, 3)
+normal_scale = 5.0
+normal_texture = ExtResource("22_y78qj")
+ao_enabled = true
+ao_texture = ExtResource("21_4fcne")
+ao_texture_channel = 4
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4jv5w"]
 material = SubResource("StandardMaterial3D_jy1uv")
@@ -91,8 +96,8 @@ transform = Transform3D(0.362359, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_4un2i")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.193579, 0.632344, 0.750112, -0.75156, -0.395875, 0.527675, 0.630623, -0.665901, 0.398612, 29.4326, 18.0556, -37.3984)
-light_color = Color(0.898039, 0.937255, 1, 1)
+transform = Transform3D(0.707951, 0.604765, 0.36478, -0.588053, 0.218697, 0.778694, 0.391151, -0.765787, 0.510461, 76.8562, 53.7426, -41.536)
+light_color = Color(0.721569, 0.827451, 1, 1)
 shadow_enabled = true
 
 [node name="MainCameraPivot" type="Marker3D" parent="."]
