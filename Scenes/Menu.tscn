@@ -1,26 +1,28 @@
-[gd_scene load_steps=15 format=3 uid="uid://0nggypwo7off"]
+[gd_scene load_steps=17 format=3 uid="uid://0nggypwo7off"]
 
 [ext_resource type="FontFile" uid="uid://qh2srf4234rf" path="res://Fonts/Xolonium-Regular.ttf" id="1_dkhc6"]
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_se2mj"]
-[ext_resource type="Texture2D" uid="uid://byi58yrfh3gka" path="res://Objects/Textures/menu_background.PNG" id="2_0qr27"]
 [ext_resource type="Texture2D" uid="uid://b0v7oorj2x0kh" path="res://Objects/Textures/book1.png" id="2_3hbqj"]
 [ext_resource type="Texture2D" uid="uid://ehvsksif3v44" path="res://Objects/Textures/book2.png" id="2_hs1yr"]
+[ext_resource type="Texture2D" uid="uid://2m1h063bvyul" path="res://Objects/Textures/menu_background_3.PNG" id="2_x2j44"]
 [ext_resource type="Texture2D" uid="uid://k0srhc0a7i4d" path="res://Objects/Textures/empty_bookcase_menu.png" id="3_xgb3s"]
 [ext_resource type="Texture2D" uid="uid://dq27lj2kmpfl2" path="res://Objects/Textures/book2_pressed.png" id="5_7hwkh"]
 [ext_resource type="Texture2D" uid="uid://dx377dbo8dvog" path="res://Objects/Textures/book2_hover.png" id="6_811sf"]
 [ext_resource type="AudioStream" uid="uid://c8u6mv60lueos" path="res://Sounds/music/menu_music.mp3" id="6_avse2"]
 [ext_resource type="Texture2D" uid="uid://bhc68g6k1uol4" path="res://Objects/Textures/book1_pressed.png" id="7_flutg"]
+[ext_resource type="Texture2D" uid="uid://6n2nbkmroyg1" path="res://Objects/Textures/book2_focus.png" id="7_q48ms"]
 [ext_resource type="Texture2D" uid="uid://0m56csti5654" path="res://Objects/Textures/book1_hover.png" id="8_h8yrc"]
 [ext_resource type="Texture2D" uid="uid://tkc2f0sbeky0" path="res://Objects/Textures/book3.png" id="8_tr5ge"]
+[ext_resource type="Texture2D" uid="uid://dv4uego72ogr0" path="res://Objects/Textures/book1_focus.png" id="12_lto72"]
 
-[sub_resource type="Animation" id="Animation_vwomq"]
+[sub_resource type="Animation" id="Animation_fswgv"]
 resource_name = "title_animation"
 length = 4.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Title:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,9 +32,9 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 50), Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlr86"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gipyx"]
 _data = {
-"title_animation": SubResource("Animation_vwomq")
+"title_animation": SubResource("Animation_fswgv")
 }
 
 [node name="Control" type="Control"]
@@ -46,10 +48,10 @@ script = ExtResource("1_se2mj")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -424.0
-offset_right = 1916.0
-offset_bottom = 1080.0
-texture = ExtResource("2_0qr27")
+offset_left = -728.0
+offset_right = 1924.0
+offset_bottom = 1224.0
+texture = ExtResource("2_x2j44")
 
 [node name="MenuBookshelf" type="TextureRect" parent="."]
 layout_mode = 0
@@ -62,21 +64,20 @@ texture = ExtResource("3_xgb3s")
 [node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1472.0
-offset_top = 384.0
+offset_top = 424.0
 offset_right = 1572.0
 offset_bottom = 701.0
 texture_normal = ExtResource("2_hs1yr")
 texture_pressed = ExtResource("5_7hwkh")
 texture_hover = ExtResource("6_811sf")
-texture_focused = ExtResource("6_811sf")
+texture_focused = ExtResource("7_q48ms")
 stretch_mode = 0
-metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="QuitButton"]
 layout_mode = 0
 offset_left = 2.0
 offset_right = 100.0
-offset_bottom = 315.0
+offset_bottom = 275.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_dkhc6")
 theme_override_font_sizes/font_size = 48
@@ -84,6 +85,35 @@ text = "Q
 U
 I
 T"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RulesButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1584.0
+offset_top = 384.0
+offset_right = 1684.0
+offset_bottom = 701.0
+texture_normal = ExtResource("2_hs1yr")
+texture_pressed = ExtResource("5_7hwkh")
+texture_hover = ExtResource("6_811sf")
+texture_focused = ExtResource("7_q48ms")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="RulesButton"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 100.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dkhc6")
+theme_override_font_sizes/font_size = 48
+text = "R
+U
+L
+E
+S"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -96,7 +126,7 @@ offset_bottom = 702.0
 texture_normal = ExtResource("2_3hbqj")
 texture_pressed = ExtResource("7_flutg")
 texture_hover = ExtResource("8_h8yrc")
-texture_focused = ExtResource("8_h8yrc")
+texture_focused = ExtResource("12_lto72")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="StartButton"]
@@ -114,18 +144,12 @@ T"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="StartButton"]
-root_node = NodePath("../../Title")
-autoplay = "title_animation"
-libraries = {
-"": SubResource("AnimationLibrary_rlr86")
-}
-
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 158.0
+offset_top = 42.4147
+offset_bottom = 200.415
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -150,6 +174,7 @@ offset_bottom = 702.0
 texture = ExtResource("8_tr5ge")
 
 [node name="Book5" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1616.0
 offset_top = 408.0
@@ -168,9 +193,9 @@ texture = ExtResource("2_3hbqj")
 
 [node name="Book4" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1704.0
+offset_left = 1696.0
 offset_top = 424.0
-offset_right = 1760.0
+offset_right = 1755.0
 offset_bottom = 702.0
 texture = ExtResource("2_3hbqj")
 
@@ -183,5 +208,12 @@ offset_right = 1904.0
 offset_bottom = 710.0
 texture = ExtResource("2_hs1yr")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "title_animation"
+libraries = {
+"": SubResource("AnimationLibrary_gipyx")
+}
+
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="RulesButton" to="." method="_on_rules_button_button_up"]
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]

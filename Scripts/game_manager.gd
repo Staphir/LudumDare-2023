@@ -1,6 +1,6 @@
 extends Node
 
-@export var nb_free_slots = 1
+@export var nb_free_slots = 19
 var current_nb_free_slots = 0
 @export var gamemode = 1 #1 is multiplayer, 0 is solo
 var game_finished = false

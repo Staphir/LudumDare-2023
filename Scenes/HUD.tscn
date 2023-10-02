@@ -13,20 +13,21 @@ offset_left = 304.0
 offset_top = 16.0
 offset_right = 992.0
 offset_bottom = 97.0
-theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_lqssw")
 theme_override_font_sizes/font_size = 48
-text = "FREE BOOK SLOTS"
+text = "FREE BOOK SLOTS:"
 
 [node name="FreeBookSlotsNb" type="Label" parent="SpaceRemainingLabel"]
 layout_mode = 0
 offset_left = 544.0
-offset_top = 8.0
 offset_right = 584.0
-offset_bottom = 55.0
-theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
 theme_override_fonts/font = ExtResource("1_lqssw")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 48
 text = "1"
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -34,16 +35,18 @@ offset_left = 24.0
 offset_top = 16.0
 offset_right = 287.0
 offset_bottom = 97.0
-theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_lqssw")
 theme_override_font_sizes/font_size = 48
 text = "SCORE"
 
 [node name="ScoreP1Label" type="Label" parent="ScoreLabel"]
 layout_mode = 0
-offset_top = 81.0
+offset_top = 64.0
 offset_right = 99.0
-offset_bottom = 142.0
+offset_bottom = 125.0
 theme_override_colors/font_color = Color(0.258824, 0.192157, 0.639216, 1)
 theme_override_fonts/font = ExtResource("1_lqssw")
 theme_override_font_sizes/font_size = 36
@@ -61,9 +64,9 @@ text = "0"
 
 [node name="ScoreP2Label" type="Label" parent="ScoreLabel"]
 layout_mode = 0
-offset_top = 133.0
+offset_top = 112.0
 offset_right = 84.0
-offset_bottom = 194.0
+offset_bottom = 173.0
 theme_override_colors/font_color = Color(0.756863, 0.184314, 0.239216, 1)
 theme_override_fonts/font = ExtResource("1_lqssw")
 theme_override_font_sizes/font_size = 36
@@ -104,10 +107,10 @@ vertical_alignment = 1
 one_shot = true
 
 [node name="ReplayButton" type="Button" parent="."]
-offset_left = 800.0
-offset_top = 856.0
-offset_right = 968.0
-offset_bottom = 912.0
+offset_left = 808.0
+offset_top = 816.0
+offset_right = 1098.0
+offset_bottom = 902.0
 theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -116,5 +119,19 @@ theme_override_font_sizes/font_size = 64
 text = "REPLAY"
 script = ExtResource("3_tl61s")
 
+[node name="MainMenuButton" type="Button" parent="."]
+offset_left = 808.0
+offset_top = 936.0
+offset_right = 1098.0
+offset_bottom = 1022.0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_lqssw")
+theme_override_font_sizes/font_size = 64
+text = "MENU"
+script = ExtResource("3_tl61s")
+
 [connection signal="timeout" from="MessageTimer1Sec" to="." method="_on_message_timer_timeout"]
 [connection signal="button_up" from="ReplayButton" to="." method="_on_replay_button_button_up"]
+[connection signal="button_up" from="MainMenuButton" to="." method="_on_main_menu_button_button_up"]

@@ -42,6 +42,7 @@ func game_finished(winner_name):
 	get_node("../Player1").set_physics_process(false)
 	get_node("../Player2").set_physics_process(false)
 	get_node("../EndSound").play()
+	get_node("../InGameMusic").stop()
 	show_message("OVER BOOKED!")
 	await get_tree().create_timer(1).timeout
 	$Message.hide()
@@ -51,6 +52,8 @@ func game_finished(winner_name):
 	$Message.hide()
 	show_winner(winner_name)
 	$ReplayButton.show()
+	$MainMenuButton.show()
+	$ReplayButton.grab_focus()
 	
 func set_windows_position():
 		var screensize = get_viewport().size
@@ -66,3 +69,7 @@ func show_winner(player_name):
 
 func _on_replay_button_button_up():
 	get_tree().reload_current_scene()
+
+
+func _on_main_menu_button_button_up():
+	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
