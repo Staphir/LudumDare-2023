@@ -10,8 +10,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_windows_position()
-
+	#set_windows_position()
+	pass
 func show_message(text):
 	$Message.text = text
 	$Message.show()
@@ -38,7 +38,7 @@ func show_start_messages():
 	$Message.hide()
 	get_node("../InGameMusic").play()
 
-func game_finished():
+func game_finished(winner_name):
 	get_node("../Player1").set_physics_process(false)
 	get_node("../Player2").set_physics_process(false)
 	get_node("../EndSound").play()
@@ -49,8 +49,20 @@ func game_finished():
 	$Message.show()
 	await get_tree().create_timer(1).timeout
 	$Message.hide()
-
+	show_winner(winner_name)
+	$ReplayButton.show()
+	
 func set_windows_position():
 		var screensize = get_viewport().size
 		get_node("../Window1").position.x = screensize.x - get_node("../Window1").size.x
 		get_node("../Window2").position.x = screensize.x - get_node("../Window2").size.x
+
+func show_winner(player_name):
+	if player_name == "":
+		show_message("Draw !!!" % [player_name])
+	else:
+		show_message("Player %s wins !!!" % [player_name])
+
+
+func _on_replay_button_button_up():
+	get_tree().reload_current_scene()

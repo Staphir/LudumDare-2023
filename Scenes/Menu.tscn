@@ -68,6 +68,7 @@ offset_bottom = 701.0
 texture_normal = ExtResource("2_hs1yr")
 texture_pressed = ExtResource("5_7hwkh")
 texture_hover = ExtResource("6_811sf")
+texture_focused = ExtResource("6_811sf")
 stretch_mode = 0
 metadata/_edit_group_ = true
 
@@ -95,6 +96,7 @@ offset_bottom = 702.0
 texture_normal = ExtResource("2_3hbqj")
 texture_pressed = ExtResource("7_flutg")
 texture_hover = ExtResource("8_h8yrc")
+texture_focused = ExtResource("8_h8yrc")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="StartButton"]
@@ -125,7 +127,9 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 158.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.552941, 0, 0.843137, 1)
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
 theme_override_fonts/font = ExtResource("1_dkhc6")
 theme_override_font_sizes/font_size = 128
 text = "LIBRARY FIGHT"
