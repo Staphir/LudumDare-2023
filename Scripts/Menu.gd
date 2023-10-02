@@ -13,7 +13,7 @@ func _process(delta):
 
 
 func _on_start_button_button_up():
-	get_tree().change_scene_to_file("res://Scenes/fast_rules.tscn")
+	get_tree().change_scene_to_file("res://Scenes/rules_scene.tscn")
 
 
 func _on_quit_button_button_up():

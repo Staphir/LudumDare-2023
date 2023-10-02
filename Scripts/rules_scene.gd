@@ -40,7 +40,7 @@ func _on_next_button_button_up():
 		$ControlRules.text = "On Keyboard:
 			- Player 1 press ENTER
 			- Player 2 press R
-		 	On Controller:
+			On Controller:
 			- both Players press A"
 	elif step == 2:
 		step +=1

@@ -347,8 +347,22 @@ text = "Escape to resume..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="QuitButton" type="Button" parent="Window"]
+offset_left = 935.0
+offset_top = 900.0
+offset_right = 1174.0
+offset_bottom = 986.0
+theme_override_colors/font_color = Color(0.886275, 0.784314, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_ul4tp")
+theme_override_font_sizes/font_size = 64
+text = "QUIT"
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="button_up" from="Window/QuitButton" to="." method="_on_quit_button_button_up"]
