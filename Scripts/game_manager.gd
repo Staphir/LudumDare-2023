@@ -1,8 +1,9 @@
 extends Node
 
-@export var nb_free_slots = 16
+@export var nb_free_slots = 1
 var current_nb_free_slots = 0
 @export var gamemode = 1 #1 is multiplayer, 0 is solo
+var game_finished = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init_game()
@@ -24,8 +25,14 @@ func init_game():
 func update_game():
 	update_HUD()
 	# finish game if library is full
-	if current_nb_free_slots <= 0:
-		get_node("../HUD").game_finished()
+	if current_nb_free_slots <= 0 and not game_finished:
+		game_finished = true
+		var winner = ""
+		if get_node("../Player1").score > get_node("../Player2").score:
+			winner = str(get_node("../Player1").player_id)
+		elif get_node("../Player1").score < get_node("../Player2").score:
+			winner = str(get_node("../Player2").player_id)
+		get_node("../HUD").game_finished(winner)
 	
 
 func init_bookshelves():
